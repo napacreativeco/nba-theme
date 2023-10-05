@@ -1,13 +1,33 @@
 <div class="navbar">
     <div class="navbar-wrapper">
+
         <div class="left">
-
+            <div class="search-link">
+                {% render 'icon--search' %}
+            </div>
+            {% render 'menu--shop-menu'%}
         </div>
+
         <div class="center">
-            
+            <a href="/" title="{{ shop.name }}">{{ settings.navbar_logo | image_url: width: 800 | image_tag }}</a>
         </div>
-        <div class="right">
 
+        <div class="right">
+            {% render 'menu--site-menu'%}
+            
+            <div class="shop-actions">
+                <div class="user">
+                    {% render 'icon--user' %}
+                </div>
+                <div class="cart-link">
+                    {% render 'icon--cart' %}
+                </div>
+            </div>
         </div>
+
     </div>
+
 </div>
+
+{% render 'search-modal' %}
+

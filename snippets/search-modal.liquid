@@ -1,0 +1,11 @@
+<div class="search-modal">
+    <div class="title">
+        {{ 'Search the shop' | escape }}
+    </div>
+
+    <form action="/search" method="get" class="search-form right" role="search">
+        <input name="q" type="search" id="search-field" placeholder="Try 'new t-shirts'" value="{{ search.terms | escape }}" />
+        <input type="submit" id="search-submit" value="search" />
+    </form>
+</div>
+

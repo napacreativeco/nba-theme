@@ -2,9 +2,16 @@
 {{ 'product-card--collection.css' | asset_url | stylesheet_tag }}
 
 
-  {% for prod in collections.all.products limit: 12 %}
-    {% render 'product-card--collection', prod: prod %}
+<h2 class="section-title">
+  {{ 'Latest Products' | escape }}
+</h2>
+
+<ul class="product-list">
+  {% for product in collections.all.products limit: 12 %}
+    {% render 'product-card--collection', prod: product %}
   {% endfor %}
+</ul>
+
 
 {% schema %}
   {

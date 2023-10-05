@@ -1,0 +1,78 @@
+{{ 'component--newsletter.css' | asset_url | stylesheet_tag }}
+
+<div class="newsletter-wrapper">
+    <div class="left">
+        <h3>
+            {{ 'Sign up to know about the next Drop' | escape }}
+        </h3>
+
+        {% form 'customer', class: 'newsletter-form' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+          
+            <div class="form-container">
+              <input
+                type="email"
+                name="contact[email]"
+                value="{{ form.email }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                {% if form.errors %}
+                  autofocus
+                  aria-invalid="true"
+                {% elsif form.posted_successfully? %}
+                  aria-success="true"
+                {% endif %}
+                placeholder="{{ 'enter your email' | downcase | escape }}"
+                required
+              >
+              <button type="submit" name="commit">
+                {{ 'submit' | downcase | escape }}
+              </button>
+            </div>
+          
+            {%- if form.errors -%}
+              <div class="errors">
+                {{ 'error' | escape }}
+              </div>
+            {%- endif -%}
+          
+            {%- if form.posted_successfully? -%}
+              <div class="success">
+                {{ 'success' | escape }}
+              </div>
+            {%- endif -%}
+          
+        {% endform %}
+            
+
+    </div>
+
+    <div class="right" style="background: url('{{ section.settings.section_image | image_url }}'); background-size: cover; background-position: center center;">
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Newsletter Signup",
+    "tag": "section",
+    "class": "newsletter-module section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_image",
+        "label": "Image"
+      }
+    ],
+    "presets": [{
+      "name": "Newsletter Signup"
+    }]
+  }
+{% endschema %}

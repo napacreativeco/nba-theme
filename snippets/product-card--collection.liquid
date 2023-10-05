@@ -1,1 +1,25 @@
-{{ prod.title }}
+<li class="product-card">
+    <div class="images">
+        {% if prod.images > 1 %}
+        {% else %}
+            <img src="{{ prod.featured_image | image_url }}" alt="" />
+        {% endif %}
+    </div>
+    <div class="data">
+        <div class="left">
+            <div class="title">
+                <h3>{{ prod.title }}</h3>
+            </div>
+            <div class="category">
+                {{ prod.type }}
+            </div>
+        </div>
+        <div class="right">
+            {% if prod.price_max > prod.price %}
+                {{ prod.price_min | money_without_trailing_zeros }} & up
+            {% else %}
+                {{ prod.price | money_without_trailing_zeros }}
+            {% endif %}
+        </div>
+    </div>
+</li>

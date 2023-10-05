@@ -1,3 +1,28 @@
 <footer>
-    Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.
-  </footer>
+
+  <div class="footer-wrapper">
+    <div class="left">
+      {{ settings.navbar_logo | image_url: width: 500 | image_tag }}
+    </div>
+
+    <div class="right">
+      <div>
+        <h4>{{ 'The Shop' | escape }}</h4>
+        <ul></ul>
+      </div>
+      <div>
+        <h4>{{ 'Follow' | escape }}</h4>
+        <ul></ul>
+      </div>
+      <div>
+        <h4>{{ 'Nappy Boy Ent.' | escape }}</h4>
+        <ul></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    COPYRIGHT NAPPY BOY ENTERTAINMENT 2023 &copy;
+  </div>
+    
+</footer>

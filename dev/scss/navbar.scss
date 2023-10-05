@@ -1,0 +1,124 @@
+.navbar {
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 999;
+    
+    --column-gap: 5%;
+
+    .navbar-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: stretch;
+        padding: 0 var(--side-padding);
+
+        // Globals
+        li.active {
+            background: #FEF2F9;
+            border-bottom: 7px solid var(--pink);
+        }
+
+
+        .left {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            gap: var(--column-gap);
+
+            .search-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    height: 30px;
+                }
+            }
+
+            .shop-menu {
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: var(--column-gap);
+                    align-items: stretch;
+                    height: 100%;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        padding: 15px 15px 10px 15px;
+
+                        a {
+                            white-space: nowrap;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+        .center {
+            text-align: center;
+            padding: 6px 12px 0 12px;
+
+            img {
+                height: auto;
+                max-width: 279px;
+                display: block;
+            }
+        }
+
+        .right {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: stretch;
+            gap: var(--column-gap);
+
+            .site-menu {
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    gap: var(--column-gap);
+                    align-items: stretch;
+                    height: 100%;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        padding: 15px 15px 10px 15px;
+
+                        a {
+                            white-space: nowrap;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                }
+            }
+
+            .shop-actions {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+
+                svg {
+                    height: 30px;
+                    width: 30px;
+                }
+
+            }
+
+        }
+    }
+}
