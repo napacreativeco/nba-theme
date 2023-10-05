@@ -17,6 +17,19 @@
           "latest_collection": "",
           "latest_collection_rows": "two"
         }
+      },
+      "team-mates": {
+        "type": "team-mates",
+        "settings": {
+          "section_title": ""
+        }
+      },
+      "newsletter-module": {
+        "type": "newsletter-module",
+        "settings": {
+          "section_title": "",
+          "section_image": "shopify:\/\/shop_images\/Nappy_Boy_Auto.png"
+        }
       }
     },
     "content_for_index": [
