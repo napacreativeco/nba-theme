@@ -9,11 +9,12 @@
     ]
   },
   {
-    "name": "Example setting",
+    "name": "Navbar",
     "settings": [
       {
-        "type": "header",
-        "content": "Example option"
+        "type": "image_picker",
+        "id": "navbar_logo",
+        "label": "Logo"
       }
     ]
   }

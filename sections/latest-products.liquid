@@ -1,0 +1,55 @@
+{{ 'component--latest-products.css' | asset_url | stylesheet_tag }}
+{{ 'product-card--collection.css' | asset_url | stylesheet_tag }}
+
+
+  {% for prod in collections.all.products limit: 12 %}
+    {% render 'product-card--collection', prod: prod %}
+  {% endfor %}
+
+{% schema %}
+  {
+    "name": "Latest Products",
+    "tag": "section",
+    "class": "latest-products section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_default_collection",
+        "label": "Display default collection instead"
+      },
+      {
+        "type": "collection",
+        "id": "latest_collection",
+        "label": "Choose a collection"
+      },
+      {
+        "type": "select",
+        "id": "latest_collection_rows",
+        "label": "Number of rows to display",
+        "options": [
+          {
+            "value": "two",
+            "label": "Two (8 products)"
+          },
+          {
+            "value": "three",
+            "label": "Three (12 products)"
+          },
+          {
+            "value": "four",
+            "label": "Four (16 products)"
+          }
+        ],
+        "default": "two"
+      }
+    ],
+    "presets": [{
+      "name": "Latest Products"
+    }]
+  }
+{% endschema %}

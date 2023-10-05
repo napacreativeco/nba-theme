@@ -1,7 +1,37 @@
-{% comment %}
-  Very important reading:
-  http://docs.shopify.com/themes/liquid-basics/what-is-true-and-false-in-liquid
-  Learn how to read theme settings in your theme.
-{% endcomment %}
+{{ 'page--home.css' | asset_url | stylesheet_tag }}
 
-{{ page.content }}
+<div class="homepage">
+
+    <div class="hero">
+      <div class="hero-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    {% section 'company-marquee' %}
+
+    {% section 'latest-products' %}
+
+</div>
+
+<script>
+  const swiper = new Swiper('.hero-swiper', {
+    direction: 'horizontal',
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+</script>
