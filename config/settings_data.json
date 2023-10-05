@@ -1,7 +1,27 @@
 {
   "current": {
+    "navbar_logo": "shopify:\/\/shop_images\/nappy-boy-logo--flame.png",
     "customer_layout": "theme",
-    "example_option": "option"
+    "example_option": "option",
+    "sections": {
+      "company-marquee": {
+        "type": "company-marquee",
+        "settings": {
+        }
+      },
+      "latest-products": {
+        "type": "latest-products",
+        "settings": {
+          "section_title": "",
+          "use_default_collection": false,
+          "latest_collection": "",
+          "latest_collection_rows": "two"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Naked": {
