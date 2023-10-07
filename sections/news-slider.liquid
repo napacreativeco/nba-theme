@@ -28,7 +28,13 @@
     "name": "News Slider",
     "tag": "section",
     "class": "news-slider-section section",
-    "settings": [],
+    "settings": [
+      {
+        "type": "text",
+        "id": "featured_product",
+        "label": "Featured Product"
+      }
+    ],
     "blocks": [
       {
         "name": "News",
@@ -67,7 +73,10 @@
           }
         ]
       }
-    ]
+    ],
+    "presets": [{
+      "name": "Featured Product"
+    }]
   }
 {% endschema %}
 
