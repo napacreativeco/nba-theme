@@ -40,13 +40,13 @@
               "product": [
                 "nba-logo-snapback"
               ],
-              "image": "shopify:\/\/shop_images\/Nappy_Boy_Auto.png"
+              "image": "shopify:\/\/shop_images\/326795616_nappy_boy_auto.webp"
             }
           },
           "5dd70861-c2f8-4eb5-bcc7-7c7712d8dc81": {
             "type": "blog_slide",
             "settings": {
-              "article": "news\/the-most-important-influencer-in-the-car-world-is-black"
+              "article": "news\/wiscansin-festival-lineup-announced-for-2024"
             }
           },
           "15700f80-4c22-4751-b4f4-c248123b63e3": {
@@ -54,7 +54,8 @@
             "settings": {
               "plain_title": "This is the title",
               "plain_body": "this could be the body",
-              "plain_link": "shopify:\/\/pages\/contact"
+              "plain_link": "shopify:\/\/pages\/contact",
+              "plain_image": "shopify:\/\/shop_images\/Nappy_Boy_Auto.png"
             }
           }
         },
