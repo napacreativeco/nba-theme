@@ -1,24 +1,27 @@
 {{ 'page--shop.css' | asset_url | stylesheet_tag }}
 
-{% section 'news-slider' %}
+<div class="collection-page">
+  {% section 'news-slider' %}
 
-{% paginate collection.products by 10 %}
+  {% paginate collection.products by 10 %}
+  
+    {% render 'collection-filters' %}
+  
+    {% for product in collection.products %}
+      <ul>
+        {% include 'product-card--collection', prod: product %}
+      </ul>
+    {% else %}
+      <p>There are no products in this view.</p>
+    {% endfor %}
+  
+    {% if paginate.pages > 1 %}
+      {{ paginate | default_pagination }}
+    {% endif %}
+  
+  {% endpaginate %}
+</div>
 
-  {% render 'collection-filters' %}
-
-  {% for product in collection.products %}
-    <ul>
-      {% include 'product-card--collection', prod: product %}
-    </ul>
-  {% else %}
-    <p>There are no products in this view.</p>
-  {% endfor %}
-
-  {% if paginate.pages > 1 %}
-    {{ paginate | default_pagination }}
-  {% endif %}
-
-{% endpaginate %}
 
 {% comment %}
   JavaScript for collection sorting.

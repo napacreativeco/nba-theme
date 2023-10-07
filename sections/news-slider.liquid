@@ -1,4 +1,6 @@
-<div class="news-swiper swiper">
+{{ 'component--news-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="news-slider swiper">
   <div class="swiper-wrapper">
     {% for block in section.blocks %}
       <div class="swiper-slide" data-type="{{ block.type }}">
@@ -14,7 +16,7 @@
   {
     "name": "News Slider",
     "tag": "section",
-    "class": "news-slider section",
+    "class": "news-slider-section section",
     "settings": [
       {
         "type": "product",
@@ -32,6 +34,11 @@
             "id": "product",
             "label": "Product",
             "limit": 1
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Slide Image"
           }
         ]
       },
@@ -64,6 +71,11 @@
             "type": "url",
             "id": "plain_link",
             "label": "Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "plain_image",
+            "label": "Slide Image"
           }
         ]
       }
@@ -75,7 +87,7 @@
 {% endschema %}
 
 <script>
-  const swiper = new Swiper('.news-swiper', {
+  const swiper = new Swiper('.news-slider', {
     direction: 'horizontal',
     loop: true,
     pagination: {
