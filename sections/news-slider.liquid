@@ -4,18 +4,14 @@
   <div class="swiper-wrapper">
     {% for block in section.blocks %}
       {% case block.type %}
-      
-        {% when 'product' %}
-          <div class="swiper-slide product_slide" data-type="{{ block.type }}">
-            {{ block.settings.product.title }}
-            {{ block.settings.image | image_url }}
-          </div>
+
         {% when 'blog_slide' %}
-          <div class="swiper-slide blog_slide" data-type="{{ block.type }}">
+          <div class="swiper-slide blog_slide" style="background: url('{{ block.settings.article.image | image_url }}'); background-size: cover; background-position: center center;" data-type="{{ block.type }}">
             {{ block.settings.article.title }}
           </div>
+
         {% when 'plain_slide' %}
-          <div class="swiper-slide plain_slide" data-type="{{ block.type }}">
+          <div class="swiper-slide plain_slide" style="background: url('{{ block.settings.plain_image | image_url }}'); background-size: cover; background-position: center center;" data-type="{{ block.type }}">
             {{ block.settings.plain_title }}
             {{ block.settings.plain_body }}
           </div>
@@ -40,23 +36,6 @@
       }
     ],
     "blocks": [
-      {
-        "name": "Product",
-        "type": "product_slide",
-        "settings": [
-          {
-            "type": "product_list",
-            "id": "product",
-            "label": "Product",
-            "limit": 1
-          },
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Slide Image"
-          }
-        ]
-      },
       {
         "name": "News",
         "type": "blog_slide",
