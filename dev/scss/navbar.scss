@@ -25,16 +25,24 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: stretch;
-            gap: var(--column-gap);
+            gap: 10px;
 
             .search-link {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                border-bottom: 7px solid var(--white);
+                cursor: pointer;
+                padding: 15px 15px 10px 15px;
 
                 svg {
                     height: 30px;
                 }
+            }
+
+            .search-link.active {
+                background: #FEF2F9;
+                border-bottom: 7px solid var(--pink);
             }
 
             .shop-menu {
@@ -68,8 +76,8 @@
             padding: 6px 12px 0 12px;
 
             img {
-                height: auto;
-                max-width: 279px;
+                height: 65px;
+                width: auto;
                 display: block;
             }
         }

@@ -5,9 +5,27 @@
     <div class="hero">
       <div class="hero-swiper swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
+          {% for post in blogs.news.articles %}
+            <div class="swiper-slide" style="background: url('{{ post.image | image_url }}'); background-size: cover; background-position: center center;">
+
+              <div class="info-box">
+                <span class="subtitle">
+                  {{ 'Featured' | escape }}
+                </span>
+                <h2>{{ post.title }}</h2>
+                <div class="actions">
+                  <a href="{{ post.url }}" class="read-more">
+                    {{ 'read more' | escape }}
+                  </a>
+
+                  <a href="" class="backlink">
+                    post origin
+                  </a>
+                </div>
+              </div>
+              
+            </div>
+          {% endfor %}
         </div>
 
         <div class="swiper-button-prev"></div>

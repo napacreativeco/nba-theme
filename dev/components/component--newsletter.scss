@@ -1,16 +1,17 @@
 .newsletter-wrapper {
     display: grid;
     grid-template-columns: 5fr 6fr;
+
     .left {
         background: url('https://cdn.shopify.com/s/files/1/0666/6308/8380/files/white-texture.png?v=1696539249');
         background-size: cover;
         background-position: center center;
         border-left: 24px solid var(--pink);
-        padding: 60px;
+        padding: 100px 60px;
 
         h3 {
             font-weight: bold;
-            font-size: 38px;
+            font-size: 34px;
             margin: 0 0 40px 0;
         }
 
@@ -19,8 +20,8 @@
             border-radius: 18px;
             border: 4px solid #000;
             background: rgba(255,255,255,.6);
-            padding: 10px;
-            font-size: 18px;
+            padding: 12px;
+            font-size: 14px;
             font-family: var(--sans-serif);
             margin: 0 0 20px 0;
         }
@@ -28,9 +29,10 @@
         button[type="submit"] {
             padding: 0;
             font-weight: bold;
-            font-size: 28px;
+            font-size: 16px;
             border: 0;
             outline: 0;
+            display: block;
         }
     }
 }

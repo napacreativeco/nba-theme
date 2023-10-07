@@ -1,11 +1,11 @@
 .search-modal {
-    top: 0;
+    top: -100%;
     left: 0;
     background: var(--white);
-    padding: 40px;
+    padding: 110px 40px 40px 40px;
     position: absolute;
     z-index: 2;
-    padding-top: 97px;
+    transition: all 0.3s ease-in-out;
 
     .title {
         font-size: 20px;

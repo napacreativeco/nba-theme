@@ -2,7 +2,9 @@
     <div class="images">
         {% if prod.images > 1 %}
         {% else %}
-            <img src="{{ prod.featured_image | image_url }}" alt="" />
+            <a href="{{ prod.url }}" title="{{ product.title }}">
+                <img src="{{ prod.featured_image | image_url }}" alt="" />
+            </a>
         {% endif %}
     </div>
     <div class="data">

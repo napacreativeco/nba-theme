@@ -1,0 +1,89 @@
+<div class="news-swiper swiper">
+  <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+      <div class="swiper-slide" data-type="{{ block.type }}">
+        {{ block.settings.article }}
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="swiper-pagination"></div>
+</div>
+
+{% schema %}
+  {
+    "name": "News Slider",
+    "tag": "section",
+    "class": "news-slider section",
+    "settings": [
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "Featured Product"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Product",
+        "type": "product_slide",
+        "settings": [
+          {
+            "type": "product_list",
+            "id": "product",
+            "label": "Product",
+            "limit": 1
+          }
+        ]
+      },
+      {
+        "name": "News",
+        "type": "blog_slide",
+        "settings": [
+          {
+            "type": "article",
+            "id": "article",
+            "label": "Article"
+          }
+        ]
+      },
+      {
+        "name": "Plain",
+        "type": "plain_slide",
+        "settings": [
+          {
+            "type": "text",
+            "id": "plain_title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "plain_body",
+            "label": "Body"
+          },
+          {
+            "type": "url",
+            "id": "plain_link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Featured Product"
+    }],
+    "enabled_on": {
+      "templates": ["page"]
+    }
+  }
+{% endschema %}
+
+<script>
+  const swiper = new Swiper('.news-swiper', {
+    direction: 'horizontal',
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+</script>

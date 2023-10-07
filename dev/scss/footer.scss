@@ -6,8 +6,12 @@ footer {
         grid-template-columns: 4fr 6fr;
         align-items: center;
         grid-gap: 20px;
+        padding: 20px 0;
 
         .left {
+            display: flex;
+            align-items: center;
+
             img {
                 max-width: 300px;
                 height: auto;
@@ -22,6 +26,34 @@ footer {
             h4 {
                 font-weight: bold;
                 text-transform: uppercase;
+                margin: 0 0 14px 0;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                a {
+                    text-transform: uppercase;
+                    position: relative;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                a::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0px;
+                    height: 2px;
+                    background: var(--pink);
+                    left: 0;
+                    right: 100%;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                a:hover::after {
+                    right: 0;
+                }
             }
         }
     }   
