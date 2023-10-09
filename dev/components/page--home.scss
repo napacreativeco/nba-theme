@@ -13,16 +13,16 @@
             border-bottom: var(--border-blk);
             display: flex;
             align-items: flex-end;
-            padding: 40px;
+            padding: 40px 40px 60px 40px;
     
             .info-box {
                 background: var(--background-texture);
                 background-size: cover;
                 background-position: center center;
                 border-left: 12px solid var(--pink);
-                padding: 18px 18px 18px 22px;
+                padding: 40px 40px 40px 42px;
                 width: 500px;
-                max-width: 40%;
+                max-width: 43%;
 
                 span.subtitle {
                     text-transform: uppercase;
@@ -62,6 +62,64 @@
                         text-transform: uppercase;
                     }
                 }
+            }
+
+        }
+
+        .swiper-navigation {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: flex-end;
+
+            svg {
+                width: 22px;
+                height: 14px;
+            }
+
+            .swiper-button-prev {
+                position: relative;
+                width: auto;
+                background: var(--white);
+                color: var(--black);
+                left: -16px;
+                padding: 30px 20px;
+                border-left: 7px solid var(--pink);
+                transition: all 0.3s ease-in-out;
+            }
+
+            .swiper-button-prev:hover {
+                background: #fef2f9;
+
+                svg {
+                    path {
+                        stroke: var(--pink);
+                    }
+                }
+            }
+
+            .swiper-button-next {
+                position: relative;
+                width: auto;
+                background: var(--white);
+                color: var(--black);
+                padding: 30px 20px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .swiper-button-next:hover {
+                background: #fef2f9;
+
+                svg {
+                    path {
+                        stroke: var(--pink);
+                    }
+                }
+            }
+
+            .swiper-button-next:after, .swiper-button-prev:after {
+                display: none;
             }
         }
     }

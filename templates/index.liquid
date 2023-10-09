@@ -28,8 +28,15 @@
           {% endfor %}
         </div>
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-navigation">
+          <div class="swiper-button-prev">
+            {% render 'icon--arrow-left' %}
+          </div>
+          <div class="swiper-button-next">
+            {% render 'icon--arrow-right' %}
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -47,6 +54,7 @@
   const swiper = new Swiper('.hero-swiper', {
     direction: 'horizontal',
     loop: true,
+    autoplay: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true

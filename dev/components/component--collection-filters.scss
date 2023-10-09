@@ -1,0 +1,258 @@
+.collection-filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px var(--side-padding);
+    position: relative;
+
+    /* Globals */
+    input[type="checkbox"] {
+        /* Add if not using autoprefixer */
+        -webkit-appearance: none;
+        appearance: none;
+        /* For iOS < 15 to remove gradient background */
+        background-color: #fff;
+        /* Not removed via appearance */
+        margin: 0;
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid currentColor;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+        display: grid;
+        place-content: center;
+    }
+    
+    input[type="checkbox"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--pink);
+    }
+    
+    input[type="checkbox"]:checked::before {
+        transform: scale(1);
+    }
+    
+    label:hover input[type="checkbox"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--pink);
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    .filter-links {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        position: relative;
+
+        .label {
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .filter-link {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .type-overlay {
+            position: absolute;
+            display: none;
+            top: 90px;
+            opacity: 0;
+            left: 0;
+            width: 250px;
+            //height: 300px;
+            z-index: 9;
+            background: var(--white);
+            color: var(--black);
+            padding: 20px;
+            border-radius: 13px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            //transition: all 0.3s ease-in-out;
+
+            span.overlay-label {
+                font-weight: normal;
+                text-transform: uppercase;
+                margin: 0 0 14px 0;
+                display: block;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-weight: normal;
+                margin-top: 10px;
+
+                .type-item {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 8px;
+                }
+            }
+        }
+
+        .type-overlay.active {
+            top: 20px;
+            opacity: 1;
+            display: block;
+        }
+
+        .filter-link:has(.type-overlay.active) {
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+
+        .color-overlay {
+            position: absolute;
+            display: none;
+            top: 90px;
+            opacity: 0;
+            left: 0;
+            width: 250px;
+            //height: 300px;
+            z-index: 9;
+            background: var(--white);
+            color: var(--black);
+            padding: 20px;
+            border-radius: 13px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            //transition: all 0.3s ease-in-out;
+
+            span.overlay-label {
+                font-weight: normal;
+                text-transform: uppercase;
+                margin: 0 0 14px 0;
+                display: block;
+            }
+
+            fieldset {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-weight: normal;
+                margin-top: 10px;
+
+                .color-item {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 8px;
+                }
+            }
+        }
+
+        .color-overlay.active {
+            top: 20px;
+            opacity: 1;
+            display: block;
+        }
+
+        .filter-link:has(.color-overlay.active) {
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .sorting-links {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .label {
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .sorting-link {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+
+            .sorting-overlay {
+                position: absolute;
+                display: none;
+                top: 90px;
+                opacity: 0;
+                right: 0;
+                width: 250px;
+                //height: 300px;
+                z-index: 9;
+                background: var(--white);
+                color: var(--black);
+                padding: 20px;
+                border-radius: 13px;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                //transition: all 0.3s ease-in-out;
+
+                span.overlay-label {
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    margin: 0 0 14px 0;
+                    display: block;
+                }
+    
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    font-weight: normal;
+                    margin-top: 10px;
+
+                    .sort-item {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 8px;
+                    }
+                }
+            }
+
+            .sorting-overlay.active {
+                top: 20px;
+                opacity: 1;
+                display: block;
+            }
+        }
+
+        .sorting-link:has(.sorting-overlay.active) {
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+}

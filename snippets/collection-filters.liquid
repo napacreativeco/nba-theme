@@ -1,57 +1,122 @@
 {{ 'component--collection-filters.css' | asset_url | stylesheet_tag }}
 
-{{ 'snippet--collection-sorting.css' | asset_url | stylesheet_tag }}
-
 <div class="collection-filters">
-    {% if collection.products_count > 1 %}
-        <fieldset class="sorting-radios">
-            <label class="sort-by" value="manual">
-                <input type="radio" value="manual">
-                {{ 'Featured' | escape }}
-            </label>
-            <label class="sort-by" value="best-selling">
-                <input type="radio" value="best-selling">
-                {{ 'Best Selling' | escape }}
-            </label>
-            <label class="sort-by" value="price-ascending">
-                <input type="radio" value="price-ascending">
-                {{ 'Lowest Price' | escape }}
-            </label>
-            <label class="sort-by" value="price-descending">
-                <input type="radio" value="price-descending">
-                {{ 'Highest Price' | escape }}
-            </label>
-            <label class="sort-by" value="created-ascending">
-                <input type="radio" value="created-ascending">
-                {{ 'Date Oldest' | escape }}
-            </label>
-            <label class="sort-by" value="created-descending">
-                <input type="radio" value="created-descending">
-                {{ 'Date Newest' | escape }}
-            </label>
-            <label class="sort-by" value="title-ascending">
-                <input type="radio" value="title-ascending">
-                {{ 'ABC Ascending' | escape }}
-            </label>
-            <label class="sort-by" value="title-descending">
-                <input type="radio" value="title-descending">
-                {{ 'ABC Descending' | escape }}
-            </label>
+    <div class="filter-links">
+        <div class="label">Filter by</div>
+        <div class="filter-link type" data-type="type">
+            <span class="link">Type {% render 'icon--arrow-down' %}</span>
 
-        </fieldset>
-    {% else %}
-
-        <div class="no-filters">
-            {{ 'There is only one product in this collection' | escape }}
+            <div class="type-overlay">
+                {% for filter in collection.filters %}
+                    {% case filter.param_name %}
+                        {% when 'filter.p.product_type' %}
+                            <span class="overlay-label">Filter by</span>
+                            <ul>
+                                {% for val in filter.values %}
+                                    <li>
+                                        <label class="type-item">
+                                            <input class="type-box" type="checkbox" name="" id="" value="{{ val.value }}" />
+                                            {{ val.value }}
+                                        </label>
+                                {% endfor %}
+                            </ul>
+                    {% endcase %}
+                {% endfor %}
+            </div>
         </div>
-    {% endif %}
 
+        <div class="filter-link color" data-type="color">
+            <span class="link">Color {% render 'icon--arrow-down' %}</span>
 
+            <div class="color-overlay">
+                {% for filter in collection.filters %}
+                    {% case filter.param_name %}
+                        {% when 'filter.v.option.color' %}
+                            <span class="overlay-label">Filter by</span>
+                            <fieldset class="color-fields">
+                                {% for val in filter.values %}
+                                    <label class="color-item">
+                                        <input class="color-box" type="checkbox" name="" id="" value="{{ val.value }}" />
+                                        {{ val.value }}
+                                    </label>
+                                {% endfor %}
+                            </fieldset>
+
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="sorting-links">
+        <div class="label">Sort by</div>
+        <div class="sorting-link">
+            Default {% render 'icon--arrow-down' %}
+
+            <div class="sorting-overlay">
+
+                <span class="overlay-label">Sort by</span>
+                
+                <ul>
+                    <li>
+                        <label class="sort-item" value="manual">
+                            <input class="sort-box" type="checkbox" value="manual">
+                            {{ 'Featured' | escape }}
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sort-item" value="best-selling">
+                            <input class="sort-box" type="checkbox" value="best-selling">
+                            {{ 'Best Selling' | escape }}
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sort-item" value="price-ascending">
+                            <input class="sort-box" type="checkbox" value="price-ascending">
+                            {{ 'Lowest Price' | escape }}
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sort-item" value="price-descending">
+                            <input class="sort-box" type="checkbox" value="price-descending">
+                            {{ 'Highest Price' | escape }}
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sort-item" value="created-ascending">
+                            <input class="sort-box" type="checkbox" value="created-ascending">
+                            {{ 'Date Oldest' | escape }}
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sort-item" value="created-descending">
+                            <input class="sort-box" type="checkbox" value="created-descending">
+                            {{ 'Date Newest' | escape }}
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sort-item" value="title-ascending">
+                            <input class="sort-box" type="checkbox" value="title-ascending">
+                            {{ 'ABC Ascending' | escape }}
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sort-item" value="title-descending">
+                            <input class="sort-box" type="checkbox" value="title-descending">
+                            {{ 'ABC Descending' | escape }}
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="item-count">
+            {{ collection.all_products_count }} items
+        </div>
+    </div>
 </div>
 
 <script>
-    jQuery('.sort-by').on('click', function() {
-        Shopify.queryParams.sort_by = jQuery(this).attr('value');
-        location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
-    });
+
 </script>

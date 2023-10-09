@@ -1,4 +1,5 @@
 {{ 'page--shop.css' | asset_url | stylesheet_tag }}
+{{ 'product-card--collection.css' | asset_url | stylesheet_tag }}
 
 <div class="collection-page">
   {% section 'announcement-slider' %}
@@ -6,14 +7,14 @@
   {% paginate collection.products by 10 %}
   
     {% render 'collection-filters' %}
-  
-    {% for product in collection.products %}
-      <ul>
-        {% include 'product-card--collection', prod: product %}
-      </ul>
-    {% else %}
-      <p>There are no products in this view.</p>
-    {% endfor %}
+    
+    <ul class="product-list">
+      {% for product in collection.products %}
+          {% include 'product-card--collection', prod: product %}
+      {% else %}
+        <p>There are no products in this view.</p>
+      {% endfor %}
+     </ul>
   
     {% if paginate.pages > 1 %}
       {{ paginate | default_pagination }}

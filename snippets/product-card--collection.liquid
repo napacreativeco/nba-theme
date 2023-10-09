@@ -2,18 +2,24 @@
     <div class="images">
         {% if prod.images > 1 %}
         {% else %}
-            <a href="{{ prod.url }}" title="{{ product.title }}">
-                <img src="{{ prod.featured_image | image_url }}" alt="" />
+            <a href="{{ collection.url }}{{ prod.url }}" title="{{ product.title }}">
+                <img src="{{ prod.featured_image | image_url }}" alt="{{ prod.featured_image.alt }}" />
             </a>
         {% endif %}
     </div>
     <div class="data">
         <div class="left">
             <div class="title">
-                <h3>{{ prod.title }}</h3>
+                <h3>
+                    <a href="{{ collection.url }}{{ prod.url }}" title="{{ prod.title }}">
+                        {{ prod.title }}
+                    </a>
+                </h3>
             </div>
             <div class="category">
-                {{ prod.type }}
+                <a href="/collections/all?filter.p.product_type={{ prod.type }}" title="{{ prod.type }}">
+                    {{ prod.type }}
+                </a>
             </div>
         </div>
         <div class="right">
