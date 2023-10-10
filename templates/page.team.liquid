@@ -10,12 +10,38 @@
     {{ 'Nappy Boy Team' | escape }}
     </h1>
 
-    <ul class="team-list">
-    {% for collection in collections %}
-        {% if collection.metafields.collection.team_mate == true %}
-        {% render 'team-mate--card', collection: collection %}
-        {% endif %}
-    {% endfor %}
-    </ul>
+    <div class="team-list">
+        <ul>
+            {% for collection in collections %}
+                {% if collection.metafields.collection.team_mate == true %}
+                {% render 'team-mate--card', collection: collection %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <div class="team-updates">
+
+        <h2 class="section-title">
+            {{ 'Recent Updates' | escape }}
+        </h2>
+
+        <ul class="post-list">
+            {% for article in blogs.news.articles %}
+                <li>
+                    <div class="title">
+                        <h3>
+                            <a href="{{ article.url }}">
+                                {{ article.title }}
+                            </a>
+                        </h3>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
 
 </div>
