@@ -1,0 +1,54 @@
+.team-mate-card {
+    border-radius: 26px;
+    box-shadow: 0px 7.03065px 15.06568px 0px rgba(0, 0, 0, 0.10);
+    background: var(--white);
+
+    .image {
+        object-fit: cover;
+        height: 190px;
+        width: 100%;
+        border-radius: 26px;
+        overflow: hidden;
+        position: relative;
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .image::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--pink);
+        mix-blend-mode: multiply;
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+        border-radius: 26px;
+    }
+
+    .image:hover::after {
+        opacity: 1;
+    }
+
+    .name {
+        padding: 30px 20px;
+
+        h3 {
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease-in-out;
+        }
+
+        h3:hover {
+            color: var(--pink);
+        }
+    }
+}

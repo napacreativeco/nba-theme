@@ -1,0 +1,16 @@
+{{ 'team-mate--card.css' | asset_url | stylesheet_tag }}
+
+<li class="team-mate-card">
+    <div class="image">
+        <img src="{{ collection.featured_image | image_url: width: 900 }}" alt="{{ collection.featured_image.alt }}" />
+    </div>
+
+    <div class="name">
+        <h3>
+            <a href="{{ collection.url }}" title="{{ collection.title }}">
+                {{ collection.title }}
+            </a>
+        </h3>
+    </div>
+    
+</li>

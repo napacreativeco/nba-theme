@@ -188,4 +188,15 @@
         $('body').removeClass('js-my-cart-open');
     });
 
+    /*
+    Size Chart
+    */
+    $('.size-chart-link').on('click', function() {
+        $('.size-chart-overlay').css('display', 'flex');
+    });
+
+    $('.close-size-chart').on('click', function() {
+        $('.size-chart-overlay').css('display', 'none');
+    });
+
 })(jQuery);

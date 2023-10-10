@@ -1,4 +1,10 @@
 .team-mates {
-    padding: 0 var(--side-padding);
+    padding: 0 var(--side-padding) 80px var(--side-padding);
     margin: 50px 0 0 0;
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
 }
