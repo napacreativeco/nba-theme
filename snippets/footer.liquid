@@ -20,11 +20,27 @@
       </div>
       <div>
         <h4>{{ 'Follow' | escape }}</h4>
-        <ul></ul>
+        <ul>
+          {% for link in linklists.follow.links %}
+            <li>
+              <a href="{{ link.url }}" title="{{ link.title }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
       <div>
         <h4>{{ 'Nappy Boy Ent.' | escape }}</h4>
-        <ul></ul>
+        <ul>
+          {% for link in linklists.nappy-boy-ent.links %}
+            <li>
+              <a href="{{ link.url }}" title="{{ link.title }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>

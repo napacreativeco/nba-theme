@@ -4,7 +4,8 @@
     <div class="filter-links">
         <div class="label">Filter by</div>
         <div class="filter-link type" data-type="type">
-            <span class="link">Type {% render 'icon--arrow-down' %}</span>
+            <span class="type-link-label">Type</span>
+            {% render 'icon--arrow-down' %}
 
             <div class="type-overlay">
                 {% for filter in collection.filters %}
@@ -26,7 +27,8 @@
         </div>
 
         <div class="filter-link color" data-type="color">
-            <span class="link">Color {% render 'icon--arrow-down' %}</span>
+            <span class="color-link-label">Color</span>
+            {% render 'icon--arrow-down' %}
 
             <div class="color-overlay">
                 {% for filter in collection.filters %}
@@ -51,8 +53,8 @@
     <div class="sorting-links">
         <div class="label">Sort by</div>
         <div class="sorting-link">
-            Default {% render 'icon--arrow-down' %}
-
+            <span class="sorting-link-label">Default</span>
+            {% render 'icon--arrow-down' %}
             <div class="sorting-overlay">
 
                 <span class="overlay-label">Sort by</span>

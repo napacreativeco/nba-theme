@@ -1,0 +1,63 @@
+<div id="product-variants" class="variants {% if hide_default_title %} hidden{% endif %}">
+
+    {% assign hide_default_title = false %}
+    {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+      {% assign hide_default_title = true %}
+    {% endif %}     
+    
+    {% if product.variants.size > 1 %} 
+    
+      <script type="text/javascript" charset="utf-8">
+        jQuery(function() { 
+          var first_variant_price = jQuery("ul li input[type='radio']:checked").attr("data-price");
+          var first_variant_compare_at_price = jQuery("ul li input[type='radio']:checked").attr("data-compare-at-price") || ''; 
+    
+          jQuery(".price-field span").html(first_variant_price);
+    
+          jQuery(".price-field del").html(first_variant_compare_at_price);
+    
+          jQuery("input[type='radio']").click(function() {
+    
+            var variant_price = jQuery(this).attr("data-price");
+            jQuery(".price-field span").html(variant_price);
+            
+            var variant_compare_at_price = jQuery(this).attr("data-compare-at-price") || '';
+            jQuery(".price-field del").html(variant_compare_at_price);
+    
+            jQuery('.price-read').html(variant_price);
+    
+            jQuery("input[type='radio']").removeClass("active");
+            jQuery(this).addClass("active");
+    
+          });
+    
+        });
+      </script>
+    
+      <ul class="variants-list">
+        {% assign found_available_variant = false %}
+        
+        {% for variant in product.variants %}
+          <li class="switch-field">
+              {% if variant.available %}
+                  <label for="{{ variant.id }}">
+                    <input {% if forloop.first %} class="active" {% endif %} type="radio"{% if variant.compare_at_price > variant.price %} data-compare-at-price="{{ variant.compare_at_price | money_with_currency }}"{% endif %} data-price="{{ variant.price | money_with_currency }}" id="{{ variant.id }}" value="{{ variant.id }}" name="id" {% if product.selected_or_first_available_variant %} checked="checked"{% endif %} />
+                    <span class="variant-name">{{ variant.option1 }}</span>
+                  </label>
+              {% else %}
+                  <label for="{{ variant.id }}" class="out-of-stock">
+                    <input type="radio" class="out-of-stock" id="{{ variant.id }}" value="{{ variant.id }}" name="id" /> 
+                    <span class="variant-name">{{ variant.option1 }}</span>
+                  </label>
+              {% endif %}
+            </li>
+        {% endfor %}
+      </ul>
+    
+    {% else %}
+    
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+    
+    {% endif %}
+    
+    </div>

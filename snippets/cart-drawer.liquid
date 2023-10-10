@@ -29,7 +29,7 @@
     </div>
 
     <div class="go-to-checkout">
-        <a href="/pages/cart">edit cart</a>
+        <a href="/cart" title="Cart">edit cart</a>
         <button type="submit" name="checkout">{{ 'Check out' | escape | upcase }} {{ cart.items_subtotal_price |  money_without_trailing_zeros }}</button>
     </div>
 

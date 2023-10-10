@@ -150,20 +150,33 @@
         var params = new URL(document.location).searchParams;
         var color = params.get("filter.v.option.color");
         var type = params.get("filter.p.product_type");
+        var sort = params.get("sort_by");
 
         // Add Active to Colors
         $('.color-box').each(function(i) {
             //console.log( $(this).attr('value') );
             if ( $(this).attr('value') == color) {
                 $(this).attr('checked', true);
+
+                $('.color-link-label').text(color);
             }
         });
 
         // Add Active to Type
         $('.type-box').each(function(i) {
-            //console.log( $(this).attr('value') );
             if ( $(this).attr('value') == type) {
                 $(this).attr('checked', true);
+
+                $('.type-link-label').text(type);
+            }
+        });
+
+        // Add Active to Sort
+        $('.sort-box').each(function(i) {
+            if ( $(this).attr('value') == sort) {
+                $(this).attr('checked', true);
+
+                $('.sorting-link-label').text(sort);
             }
         });
     });

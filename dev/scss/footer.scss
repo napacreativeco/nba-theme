@@ -38,6 +38,8 @@ footer {
                     text-transform: uppercase;
                     position: relative;
                     transition: all 0.3s ease-in-out;
+                    display: inline;
+                    width: auto;
                 }
 
                 a::after {
