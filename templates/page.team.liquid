@@ -1,1 +1,21 @@
-team page
+{{ 'page--team.css' | asset_url | stylesheet_tag }}
+
+<div class="team-page">
+
+    <div class="team-hero">
+        {% section 'team-page-slider' %}
+    </div>
+
+    <h1 class="section-title">
+    {{ 'Nappy Boy Team' | escape }}
+    </h1>
+
+    <ul class="team-list">
+    {% for collection in collections %}
+        {% if collection.metafields.collection.team_mate == true %}
+        {% render 'team-mate--card', collection: collection %}
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+</div>
