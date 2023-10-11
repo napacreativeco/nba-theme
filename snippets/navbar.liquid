@@ -21,6 +21,9 @@
                 </div>
                 <div class="cart-link" data-ajax-cart-toggle-class-button="js-my-cart-open">
                     {% render 'icon--cart' %}
+                    <span class="cart-counter" data-ajax-cart-bind-state="cart.item_count">
+                        {{ cart.item_count }}
+                    </span>
                 </div>
             </div>
         </div>

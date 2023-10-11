@@ -1,2 +1,40 @@
-{{ product.title }}
-{{ product.variant.title }}
+<li class="product-card-cart">
+    <div class="image">
+        <img src="{{ item.product.images[0] | image_url: width: 200 }}" alt="" />
+        <a class="remove" data-ajax-cart-request-button href="{{ item.url_to_remove }}" rel="{{ item.id }}">
+            &times;
+        </a>
+    </div>
+
+    <div class="data">
+        <div class="title">
+            {{ item.product.title }}
+        </div>
+        <div class="type">
+            {{ item.product.type }}
+        </div>
+        <div class="variant">
+            {{ item.variant.title }}
+        </div>
+        <div class="quantity">
+            <span class="label">
+                Quantity: 
+            </span>
+            <span data-ajax-cart-quantity-input="{{ item_index }}">
+                {{ item.quantity }}
+            </span>
+        </div>
+
+    </div>
+
+    <div class="actions">
+        <a data-ajax-cart-request-button
+          href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
+          -
+        </a>
+        <a data-ajax-cart-request-button 
+          href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
+          +
+        </a>
+    </div>
+</li>

@@ -8,6 +8,7 @@
     bottom: 0;
     z-index: 999;
     box-shadow: var(--drop-shadow--main);
+    transition: right 0.5s ease-in-out;
 
     .drawer-header {
         display: flex;
@@ -45,6 +46,12 @@
 
     .cart-items {
         padding: 0 20px;
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
     }
 
     .item-number {

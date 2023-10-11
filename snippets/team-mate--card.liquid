@@ -2,7 +2,12 @@
 
 <li class="team-mate-card">
     <div class="image">
-        <img src="{{ collection.featured_image | image_url: width: 900 }}" alt="{{ collection.featured_image.alt }}" />
+        <a href="{{ collection.url }}" title="View Bio">
+            <img src="{{ collection.featured_image | image_url: width: 900 }}" alt="{{ collection.featured_image.alt }}" />
+        </a>
+        <div class="text">
+            view bio
+        </div>
     </div>
 
     <div class="name">
@@ -11,6 +16,10 @@
                 {{ collection.title }}
             </a>
         </h3>
+    </div>
+
+    <div class="excerpt">
+        {{ collection.metafields.collection.short_description | metafield_tag | newline_to_br }}
     </div>
     
 </li>

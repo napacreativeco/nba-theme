@@ -37,6 +37,27 @@
                             </a>
                         </h3>
                     </div>
+                    <div class="tag">
+                        {% for tag in article.tags %}
+                            {{ tag }}
+                        {% endfor %}
+                    </div>
+
+                    <div class="backlink">
+                        {% if article.metafields.article.backlink_name %}
+                            <a href="{{ article.metafields.article.backlink_url }}">
+                                {{ article.metafields.article.backlink_name }}
+                            </a>
+                        {% else %}
+                            {{ 'Nappy Boy Automotive' | escape }}
+                        {% endif %}
+                    </div>
+
+                    <div class="read-more">
+                        <a href="{{ article.url }}" title="{{ article.metafields.article.backlink_name }}">
+                            {{ 'Read more' | escape }}
+                        </a>
+                    </div>
                 </li>
             {% endfor %}
         </ul>

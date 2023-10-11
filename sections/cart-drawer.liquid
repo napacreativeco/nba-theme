@@ -1,0 +1,41 @@
+{{ 'component--cart-drawer.css' | asset_url | stylesheet_tag }}
+{{ 'product-card--cart.css' | asset_url | stylesheet_tag }}
+
+<div class="cart-drawer">
+  <form action="{{ routes.cart_url }}" method="post">
+
+    <div class="drawer-header">
+      <span class="title">{{ 'Shopping Cart' | upcase | escape }}</span>
+      <span class="close-drawer">
+        {% render 'icon--close' %}
+      </span>
+    </div>
+
+    <div class="item-number">
+        <span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span> items
+    </div>
+
+    <div class="cart-items" data-ajax-cart-section>
+      {% if cart.item_count == 0 %}
+        <div class="drawer-empty">
+          no items in cart
+        </div>
+      {% else %}
+        <ul class="drawer-has-items"  data-ajax-cart-section-scroll>
+          {% for item in cart.items %}
+            {% assign item_index = forloop.index %}
+            {% render 'product-card--cart' item_index: item_index, item: item, cart: cart, forloop: forloop, price: item.final_line_price %}
+          {% endfor %}
+        </ul>    
+      {% endif %}
+    </div>
+
+    <div class="go-to-checkout" data-ajax-cart-section>
+        <a href="/cart" title="Cart">edit cart</a>
+        <button type="submit" name="checkout">{{ 'Check out' | escape | upcase }} {{ cart.items_subtotal_price | money_without_trailing_zeros }}</button>
+    </div>
+
+  </form>
+</div>
+
+{% schema %} { "name": "My Cart" } {% endschema %}
