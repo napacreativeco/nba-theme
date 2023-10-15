@@ -44,6 +44,8 @@ body {
 	max-width: 100%;
 	font-family: 'Work Sans', sans-serif;
 	scroll-behavior: smooth;
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
 }
 ol, ul {
 	list-style: none;
