@@ -62,13 +62,6 @@
               "company_link": "",
               "company_image": "shopify:\/\/shop_images\/Nappy_Boy_Auto_7_..png"
             }
-          },
-          "f4901c4b-894e-455c-a287-c4bfb85bcd0f": {
-            "type": "company",
-            "settings": {
-              "company_title": "",
-              "company_link": ""
-            }
           }
         },
         "block_order": [
@@ -78,8 +71,7 @@
           "f875a1d7-941d-48cb-956b-11333bb74001",
           "7600cced-8ed2-4e89-9efb-dde51e19df5e",
           "eba29d26-0bfe-49c5-8068-a5c84c22f4fb",
-          "4ee0f711-fbbc-41ec-86f1-d8948bd3cc6f",
-          "f4901c4b-894e-455c-a287-c4bfb85bcd0f"
+          "4ee0f711-fbbc-41ec-86f1-d8948bd3cc6f"
         ],
         "settings": {
           "company_marquee": ""
