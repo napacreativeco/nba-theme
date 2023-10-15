@@ -2,11 +2,11 @@
 {{ 'product-card--collection.css' | asset_url | stylesheet_tag }}
 
 
-<h2 class="section-title">
+<h2 class="section-title" data-aos="fade-left">
   {{ 'Latest Products' | escape }}
 </h2>
 
-<ul class="product-list">
+<ul class="product-list" data-aos="fade-up" data-aos-delay="300">
   {% for product in collections.all.products limit: 12 %}
     {% render 'product-card--collection', prod: product %}
   {% endfor %}

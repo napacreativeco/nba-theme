@@ -1,1 +1,1 @@
-.collection-page ul.product-list{display:grid;grid-template-columns:repeat(4,1fr);grid-gap:15px;padding:0 var(--side-padding) 40px var(--side-padding)}
+.collection-page ul.product-list{display:grid;grid-template-columns:repeat(4,1fr);grid-gap:15px;padding:0 var(--side-padding) 40px var(--side-padding)}@media screen and (max-width:767px){.collection-page ul.product-list{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:10px;padding:0 var(--side-padding) 40px var(--side-padding)}}

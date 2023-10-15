@@ -1,11 +1,14 @@
 <li class="product-card">
     <div class="images">
-        {% if prod.images > 1 %}
-        {% else %}
-            <a href="{{ collection.url }}{{ prod.url }}" title="{{ product.title }}">
-                <img src="{{ prod.featured_image | image_url }}" alt="{{ prod.featured_image.alt }}" />
-            </a>
-        {% endif %}
+        <div class="image-outline"></div>
+        <a href="{{ collection.url }}{{ prod.url }}" title="{{ product.title }}">
+            <img class="one" src="{{ prod.images[0] | image_url }}" alt="{{ prod.featured_image.alt }}" />
+            {% if prod.images.size > 1 %}
+                <img class="two" src="{{ prod.images[1] | image_url }}" alt="{{ prod.featured_image.alt }}" />
+            {% else %}
+                <img class="two" src="{{ prod.images[0] | image_url }}" alt="{{ prod.featured_image.alt }}" />
+            {% endif %}
+        </a>
     </div>
     <div class="data">
         <div class="left">

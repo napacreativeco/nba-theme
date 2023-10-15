@@ -13,11 +13,13 @@
             align-items: center;
             height: 280px;
 
-            .content {
+            .slide-content {
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
                 max-width: 40%;
+                opacity: 0;
+                transform: translateY(-20%);
     
                 h2 {
                     font-size: 28px;

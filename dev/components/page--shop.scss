@@ -8,3 +8,16 @@
       padding: 0 var(--side-padding) 40px var(--side-padding);
    }
 }
+
+@media screen and (max-width: 767px) {
+   .collection-page {
+      //padding-top: 71px;
+
+      ul.product-list {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         grid-gap: 10px;
+         padding: 0 var(--side-padding) 40px var(--side-padding);
+      }
+   }
+}

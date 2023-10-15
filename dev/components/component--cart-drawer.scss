@@ -117,3 +117,10 @@
 .js-my-cart-open .cart-drawer {
     right: 0%;
 }
+
+@media screen and (max-width: 767px) {
+    .cart-drawer {
+        height: 100svh;
+        width: 90vw;
+    }
+}

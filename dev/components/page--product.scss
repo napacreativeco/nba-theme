@@ -3,7 +3,7 @@
     form {
         display: grid;
         grid-template-columns: 54% 1fr;
-        grid-gap: 30px;
+        grid-gap: 40px;
         align-items: center;
         padding: 0 0 30px 0;
         width: 100%;
@@ -15,7 +15,7 @@
             .swiper {
                 width: 100%;
                 height: 100%;
-                min-height: 94svh;
+                min-height: 54vw;
 
                 .swiper-wrapper {
 
@@ -25,11 +25,31 @@
                     }
 
                 }
+
+                .swiper-pagination {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    padding: 15px 20px;
+
+                    .swiper-pagination-bullet {
+                        width: 16px;
+                        height: 16px;
+                        border: 2px solid var(--black);
+                        background: transparent;
+                        opacity: 1;
+                    }
+
+                    .swiper-pagination-bullet-active {
+                        background: var(--black);
+                    }
+                }
+
             }
         }
 
         .right {
-            padding: 20px var(--side-padding);
+            padding: 60px 40px 60px 40px;
 
             .category {
                 text-transform: uppercase;
@@ -43,15 +63,27 @@
                 margin: 0 0 20px 0;
             }
 
-            .description {
+            .description.desktop {
+                display: block;
+                font-size: 14px;
+                line-height: 139%;
+                padding: 0 0 20px 0;
+            }
+            .description.mobile {
+                display: none;
                 font-size: 14px;
                 line-height: 139%;
             }
 
             .variants {
 
+                .title {
+                    font-size: 16px;
+                    font-weight: normal;
+                }
+
                 ul {
-                    padding: 20px 0;
+                    padding: 10px 0;
                     list-style: none;
                     display: flex;
                     flex-direction: row;
@@ -139,6 +171,7 @@
                 text-transform: uppercase;
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
+                font-size: 16px;
             }
 
             .size-chart-link:hover {
@@ -198,6 +231,75 @@
         }
         .close-size-chart:hover {
             box-shadow: none;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .single-product {
+        form {
+            display: flex;
+            flex-direction: column;
+
+            .left {
+                width: 100%;
+                height: 100%;
+
+                .swiper {
+                    width: 100%;
+                    height: 100%;
+                    min-height: auto;
+                    height: 60svh;
+
+                    .swiper-wrapper {
+
+                        .swiper-slide {
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                    }
+                }
+            }
+
+            .right {
+                padding: 0px 15px 0px 15px;
+
+                .actions {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                    margin: 10px 0;
+
+                    .price {
+                        font-size: 30px;
+                    }
+
+                    #product-add {
+                        width: 100%;
+
+                        input[type="submit"] {
+                            width: 100%;
+                            display: block;
+                        }
+                    }
+
+                }
+
+                .description.mobile {
+                    display: block;
+
+                    .title {
+                        font-weight: normal;
+                        font-size: 16px;
+                        margin: 0 0 14px 0;
+                        display: block;
+                    }
+                }
+                .description.desktop {
+                    display: none;
+                }
+            }
         }
     }
 }

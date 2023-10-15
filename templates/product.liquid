@@ -9,7 +9,7 @@
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
   <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
   
-  <form action="/cart/add" method="post" enctype="multipart/form-data">
+  <form action="/cart/add" method="post" enctype="multipart/form-data" data-aos="fade-up">
       
       <div class="left">
         <div class="product-swiper swiper">
@@ -30,7 +30,8 @@
         <div class="title">
           <h1>{{ product.title }}</h1>
         </div>
-        <div class="description" itemprop="description">
+
+        <div class="description desktop" itemprop="description">
           {{ product.description }}
         </div>
 
@@ -57,8 +58,17 @@
           {% render 'icon--size-chart' %} size chart 
         </div>
 
+        <div class="description mobile" itemprop="description">
+          <span class="title">
+            Description
+          </span>
+          {{ product.description }}
+        </div>
+
       </div> 
   </form>
+
+  {% render 'recommended-products' %}
 
 </div>
 

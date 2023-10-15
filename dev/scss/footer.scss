@@ -67,3 +67,30 @@ footer {
         padding: 30px;
     }
 }
+
+@media screen and (max-width: 767px) {
+    footer {
+        padding: 0 40px;
+        
+        .footer-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            .shop-links {
+                display: none;
+            }
+
+            .left {
+                justify-content: center;
+            }
+
+            .right {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .attribution {
+            padding: 30px 0;
+        }
+    }
+}

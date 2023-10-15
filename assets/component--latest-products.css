@@ -1,1 +1,1 @@
-.latest-products{margin-top:30px;padding:0 var(--side-padding)}.latest-products .product-list{display:grid;grid-template-columns:repeat(4,1fr);grid-gap:16px}
+.latest-products{margin-top:30px;padding:0 var(--side-padding)}.latest-products .product-list{display:grid;grid-template-columns:repeat(4,1fr);grid-gap:16px}@media screen and (max-width:767px){.latest-products{margin-top:20px;padding:0 var(--side-padding)}.latest-products .product-list{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:11px}}

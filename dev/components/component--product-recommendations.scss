@@ -1,0 +1,24 @@
+.recommended-products {
+
+
+    .section-title {
+        padding-top: 30px;
+        padding-left: var(--side-padding);
+    }
+
+    ul.product-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
+        padding: 0 var(--side-padding) 80px var(--side-padding);
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .recommended-products {
+        ul.product-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

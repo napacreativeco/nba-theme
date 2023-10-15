@@ -31,7 +31,8 @@ footer, header, hgroup, menu, nav, section {
 }
 
 html {
-	scroll-behavior: smooth;
+	//scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body {

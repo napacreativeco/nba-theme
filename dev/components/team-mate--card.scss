@@ -1,6 +1,7 @@
 .team-mate-card {
     border-radius: 26px;
     box-shadow: 0px 7.03065px 15.06568px 0px rgba(0, 0, 0, 0.10);
+    transition: all 0.3s ease-in-out;
     background: var(--white);
 
     .image {
@@ -84,4 +85,8 @@
         font-size: 14px;
     }
 
+}
+
+.team-mate-card:hover {
+    box-shadow: 0px 2.03065px 5.06568px 0px rgba(0, 0, 0, 0.10);
 }

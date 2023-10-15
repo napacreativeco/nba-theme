@@ -46,18 +46,111 @@
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
   <script>jQuery('html').removeClass('no-js').addClass('js');</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  {% render 'preloader' %}
 
   {% render 'navbar' %}
+  {% render 'mobile-navbar' %}
+  {% comment %}  
+    {% render 'mobile-navbar--overlay' %}
+  {% endcomment %}
+
+
 
   {% section 'cart-drawer' %}
   
   <main role="main">
+
+    <div class="navbar-overlay-new">
+
+      <div class="overlay-header">
+        <div class="close-overlay">
+            {% render 'icon--close' %}
+        </div>
+        <div class="overlay-logo">
+            <a href="/" title="{{ shop.name }}">{{ settings.navbar_logo | image_url: width: 500 | image_tag }}</a>
+        </div>
+      </div>
+
+      <div class="overlay-menu">
+          <div class="title">Menu</div>
+          <div>
+              <ul class="links">
+                  {% for link in linklists.main-menu.links %}
+                      <li>
+                        <a href="{{ link.url }}" title="{{ link.title }}">
+                          {{ link.title }}
+                        </a>
+                      </li>
+                  {% endfor %}
+                  {% for link in linklists.site-menu.links %}
+                    <li>
+                      <a href="{{ link.url }}" title="{{ link.title }}">
+                        {{ link.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+              </ul>
+          </div>
+
+      </div>
+
+      <div class="overlay-footer">
+        <div>
+            <ul class="links">
+                {% for link in linklists.footer.links %}
+                    <li>
+                      <a href="{{ link.url }}" title="{{ link.title }}">
+                        {{ link.title }}
+                      </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div>
+            <ul class="social">
+                <li>
+                    <a href="" title="Instagram">
+                        {% render 'icon--instagram' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="X">
+                        {% render 'icon--twitter' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="Twitch">
+                        {% render 'icon--twitch' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="Facebook">
+                        {% render 'icon--facebook' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="YouTube">
+                        {% render 'icon--youtube' %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+      </div>
+
+    </div>
+
     {{ content_for_layout }}
   </main>
 
@@ -99,6 +192,48 @@
   {{ 'index.js' | asset_url | script_tag }}
 
   {% render 'footer' %}
+
+  {% comment %} 
+  Progress Bar
+  {% endcomment %}
+  <script>
+    var i = 0;
+
+    function move() {
+        if (i == 0) {
+            i = 1;
+            var elem = document.getElementById("progress");
+            var width = 10;
+            var id = setInterval(frame, 10);
+
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                    i = 0;
+                } else {
+                    width++;
+                    elem.style.width = width + "%";
+
+                    
+                }
+            } 
+
+        }
+
+    }
+    move();
+  </script>
+
+  {% comment %} 
+  Images Loaded
+  {% endcomment %}
+  <script>
+    imagesLoaded( document.querySelector('body'), function( instance ) {
+
+      jQuery('.preloader').css('display', 'none');
+      console.log('all images are loaded');
+    });
+  </script>
 
 </body>
 

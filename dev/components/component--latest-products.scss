@@ -11,3 +11,19 @@
         
     }
 }
+
+@media screen and (max-width: 767px) {
+    .latest-products {
+        margin-top: 20px;
+        padding: 0 var(--side-padding);
+        
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 11px;
+    
+            // card in own file
+            
+        }
+    } 
+}

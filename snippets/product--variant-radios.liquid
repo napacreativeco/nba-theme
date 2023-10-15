@@ -1,5 +1,11 @@
 <div id="product-variants" class="variants {% if hide_default_title %} hidden{% endif %}">
 
+    {% if product.variants.size > 1 %} 
+      <span class="title">
+        Choose a size
+      </span>
+    {% endif %}
+
     {% assign hide_default_title = false %}
     {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
       {% assign hide_default_title = true %}

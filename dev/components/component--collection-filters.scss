@@ -1,4 +1,8 @@
-.collection-filters {
+.collection-filters.mobile {
+    display: none;
+}
+
+.collection-filters.desktop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -74,6 +78,21 @@
             text-transform: uppercase;
             cursor: pointer;
             position: relative;
+            color: var(--black);
+            transition: all 0.24s ease-in-out;
+
+            path {
+                stroke: var(--black);
+            }
+        }
+
+        .filter-link:hover {
+            color: var(--pink);
+
+            path {
+                fill: var(--pink);
+                stroke: var(--pink);
+            }
         }
 
         .type-overlay {
@@ -209,7 +228,7 @@
                 right: 0;
                 width: 250px;
                 //height: 300px;
-                z-index: 9;
+                z-index: 99;
                 background: var(--white);
                 color: var(--black);
                 padding: 20px;
@@ -248,6 +267,15 @@
             }
         }
 
+        .sorting-link:hover {
+            transition: all 0.24s ease-in-out;
+            color: var(--pink);
+
+            path {
+                stroke: var(--pink);
+            }
+        }
+
         .sorting-link:has(.sorting-overlay.active) {
             svg {
                 transform: rotate(90deg);
@@ -255,4 +283,99 @@
         }
     }
 
+}
+
+@media screen and (max-width: 767px) {
+    .collection-filters.desktop {
+        display: none;
+    }
+
+    .collection-filters.mobile {
+        display: block;
+
+        .item-count {
+            padding: 20px var(--side-padding) 0px var(--side-padding);
+        }
+
+        details {
+            padding: 10px 0;
+            margin: 10px var(--side-padding) 20px var(--side-padding);
+            border-top: 2px solid var(--black);
+            border-bottom: 2px solid var(--black);
+        }
+
+        details > summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .filter-body {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: flex-start;
+
+            .label {
+                font-size: 14px;
+                text-transform: uppercase;
+                margin: 0 0 10px 0;
+                display: block;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            fieldset {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            label {
+                text-transform: uppercase;
+            }
+
+        }
+
+        .sort-body {
+            padding: 30px 0 10px 0;
+
+            .label {
+                font-size: 14px;
+                text-transform: uppercase;
+                margin: 0 0 10px 0;
+                display: block;
+            }
+
+            .select {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+
+                select {
+                    width: 100%;
+                    border-radius: 16px;
+                    padding: 10px 10px;
+                    font-size: 18px;
+                    text-transform: lowercase;
+                    appearance: none;
+                    font-family: var(--sans-serif);
+                    outline: 0;
+                    border: 2px solid var(--black);
+                }
+
+                svg {
+                    position: absolute;
+                    right: 16px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 22px;
+                }
+            }
+        }
+
+    }
 }

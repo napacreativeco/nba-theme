@@ -4,23 +4,27 @@
 <div class="collection-page">
   {% section 'announcement-slider' %}
 
-  {% paginate collection.products by 10 %}
+  <div class="lower" data-aos="fade-up">
+    {% paginate collection.products by 10 %}
   
-    {% render 'collection-filters' %}
+      
+      {% render 'collection-filters' %}
+      
+      <ul class="product-list">
+        {% for product in collection.products %}
+            {% include 'product-card--collection', prod: product %}
+        {% else %}
+          <p>There are no products in this view.</p>
+        {% endfor %}
+       </ul>
     
-    <ul class="product-list">
-      {% for product in collection.products %}
-          {% include 'product-card--collection', prod: product %}
-      {% else %}
-        <p>There are no products in this view.</p>
-      {% endfor %}
-     </ul>
-  
-    {% if paginate.pages > 1 %}
-      {{ paginate | default_pagination }}
-    {% endif %}
-  
-  {% endpaginate %}
+      {% if paginate.pages > 1 %}
+        {{ paginate | default_pagination }}
+      {% endif %}
+    
+    {% endpaginate %}
+  </div>
+
 </div>
 
 

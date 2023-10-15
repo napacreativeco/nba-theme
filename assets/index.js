@@ -1,9 +1,5 @@
 (function($) {
 
-    $(document).ready(function() {
-        //console.log('ready');
-    });
-
     /* 
     Search
     */
@@ -17,6 +13,16 @@
         }
     });
 
+    /* 
+    Submenu
+    */
+    $('li.has-dropdown').on('mouseenter', function() {
+        $('.submenu-container').css('top', '0');
+    });
+
+    $('.submenu-container').on('mouseleave', function() {
+        $('.submenu-container').css('top', '-100%');
+    });
 
     /*
     Type Overlay
@@ -186,6 +192,16 @@
     */
     $('.close-drawer').on('click', function() {
         $('body').removeClass('js-my-cart-open');
+    });
+
+    /*
+    Menu Overlay
+    */
+   $('.menu-link').on('click', function() {
+        $('.navbar-overlay-new').css('left', '0%');
+   });
+   $('.close-overlay').on('click', function() {
+        $('.navbar-overlay-new').css('left', '-100%');
     });
 
     /*

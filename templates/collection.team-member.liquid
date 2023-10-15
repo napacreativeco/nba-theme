@@ -26,13 +26,29 @@
                 <h1>{{ collection.title }}</h1>
             </div>
 
-            <div class="hometown">
-                hometown
-            </div>
+            {% if collection.metafields.team.hometown != blank %}
+                <div class="hometown">
+                    <span class="title">
+                        <h3>{{ 'Hometown' | escape }}</h3>
+                    </span>
+                    <span class="town">
+                        {{ collection.metafields.team.hometown }}
+                    </span>
+                </div>
+            {% endif %}
 
-            <div class="fleet">
-                fleet
-            </div>
+            {% if collection.metafields.team.fleet != blank %}
+                <div class="fleet">
+                    <span class="title">
+                        <h3>{{ 'Fleet' | escape }}</h3>
+                    </span>
+                    <ul>
+                        {% for fleet in collection.metafields.team.fleet.value %}
+                            <li>{{ fleet }}{% if forloop.last %}{% else %}, {% endif %}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
         </div>
     </div>
 
@@ -48,7 +64,66 @@
 
         <div class="right">
             <ul class="social-links">
-                
+                {% if collection.metafields.custom.social_media.value.instagram != blank %}
+                    <li class="social-link instagram">
+                        <a href="{{ collection.metafields.custom.social_media.value.instagram }}" title="Instagram">
+                            <span class="icon">
+                                {% render 'icon--instagram' %}
+                            </span>
+                            <span class="label">
+                                {{ 'Instagram' | escape }}
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if collection.metafields.custom.social_media.value.twitter != blank %}
+                    <li class="social-link twitter">
+                        <a href="{{ collection.metafields.custom.social_media.value.twitter }}" title="X">
+                            <span class="icon">
+                                {% render 'icon--twitter' %}
+                            </span>
+                            <span class="label">
+                                {{ 'X' | escape }}
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if collection.metafields.custom.social_media.value.twitch != blank %}
+                    <li class="social-link twitch">
+                        <a href="{{ collection.metafields.custom.social_media.value.twitch }}" title="Twitch">
+                            <span class="icon">
+                                {% render 'icon--twitch' %}
+                            </span>
+                            <span class="label">
+                                {{ 'Twitch' | escape }}
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if collection.metafields.custom.social_media.value.facebook != blank %}
+                    <li class="social-link facebook">
+                        <a href="{{ collection.metafields.custom.social_media.value.facebook }}" title="Facebook">
+                            <span class="icon">
+                                {% render 'icon--facebook' %}
+                            </span>
+                            <span class="label">
+                                {{ 'Facebook' | escape }}
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if collection.metafields.custom.social_media.value.youtube != blank %}
+                    <li class="social-link youtube">
+                        <a href="{{ collection.metafields.custom.social_media.value.youtube }}" title="YouTube">
+                            <span class="icon">
+                                {% render 'icon--youtube' %}
+                            </span>
+                            <span class="label">
+                                {{ 'YouTube' | escape }}
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>

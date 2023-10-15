@@ -1,0 +1,22 @@
+{% if has_sub_menu or has_sub_categories %}
+    <div class="submenu-container">
+      <span class="label">
+        {{ 'Collections' | escape }}
+      </span>
+      <ul class="submenu">
+        {% if has_sub_menu %}
+          {% for l in linklists[child_list_handle].links %}
+          <li class="{% if l.active %} active{% endif %}">
+            <a href="{{ l.url }}">{{ l.title }}</a>
+          </li>
+          {% endfor %}
+        {% elsif has_sub_categories %}
+          {% for tag in link.object.all_tags %}
+          <li class="{% if current_tags contains tag %} active{% endif %}">
+            <a href="{{ link.url }}/{{ tag | handle }}">{{ tag }}</a>
+          </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+{% endif %}

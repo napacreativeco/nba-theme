@@ -53,11 +53,52 @@
         .right {
             display: flex;
             flex-direction: column;
+            gap: 20px;
+            padding-bottom: 80px;
 
             .name {
+                padding: 0 0 20px 0;
+
                 h1 {
                     font-weight: bold;
                     font-size: 46px;
+                }
+
+            }
+
+            .hometown {
+                .title {
+                    display: block;
+                    margin: 0 0 10px 0;
+
+                    h3 {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 22px;
+                    }
+
+                }
+            }
+
+            .fleet {
+                .title {
+                    display: block;
+                    margin: 0 0 10px 0;
+
+                    h3 {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 22px;
+                    }
+
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 4px;
+                    max-width: 320px;
                 }
             }
         }
@@ -74,5 +115,59 @@
                 line-height: 139%;
             }
         }
+
+        .right {
+
+            ul.social-links {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                li.social-link {
+                    
+                    cursor: pointer;
+
+                    a {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 12px;
+                        border: 2px solid var(--black);
+                        padding: 14px;
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    svg {
+                        transition: all 0.3s ease-in-out;
+                        path {
+                            transition: all 0.3s ease-in-out;
+                        }
+                    }
+                    span.label {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+                }
+
+                li.social-link:hover {
+
+                    a {
+                        color: var(--pink);
+                        border: 2px solid var(--pink);
+                    }
+
+
+                    svg {
+                        path {
+                            fill: var(--pink);
+                        }
+                        
+                        //stroke: var(--pink);
+                    }
+                    
+                }
+            }
+        }
+
     }
 }

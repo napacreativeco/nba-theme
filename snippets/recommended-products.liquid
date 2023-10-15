@@ -1,1 +1,21 @@
-recommended products
+{{ 'component--product-recommendations.css' | asset_url | stylesheet_tag }}
+{{ 'product-card--collection.css' | asset_url | stylesheet_tag }}
+
+<div class="recommended-products" data-aos="fade-up" data-aos-delay="300">
+    <div class="section-title">
+        Recommended Products
+    </div>
+
+    <ul class="product-list">
+        {% if recommendations.products_count > 0%}
+            {% for prod in recommendations.products limit: 4 %}
+                {% render 'product-card--collection', prod: prod %}
+            {% endfor %}
+        {% else %}
+            {% for prod in collections.all.products limit: 4 %}
+                {% render 'product-card--collection', prod: prod %}
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+</div>

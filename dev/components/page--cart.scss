@@ -1,0 +1,99 @@
+.cart-page {
+    padding: 20px 0 0 0;
+
+    .cart-header {
+        padding: 20px var(--side-padding);
+        .title {
+            font-weight: bold;
+            font-size: 28px;
+            display: block;
+        }
+
+        .item-number {
+            margin: 10px 0 10px 0;
+            font-size: 16px;
+        }
+    }
+
+    .cart-items {
+        padding: 0 var(--side-padding);
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .product-card-cart {
+                grid-template-columns: 1fr 3fr 1fr;
+            }
+        }
+    }
+
+
+    .additional-notes {
+        padding: 10px var(--side-padding);
+        margin-top: 20px;
+
+        .label {
+            font-size: 16px;
+            text-transform: uppercase;
+            margin: 0 0 12px 0;
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 20px;
+            border-radius: 16px;
+            border: 2px solid var(--black);
+            font-family: var(--sans-serif);
+        }
+
+        textarea:focus-visible {
+            border: 2px solid var(--pink);
+            outline: 0;
+        }
+    }
+
+    .go-to-checkout {
+        padding: 0 var(--side-padding);
+        margin: 20px 0 40px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        button {
+            padding: 10px 60px;
+            text-align: center;
+            color: var(--pink);
+            border: 2px solid var(--black);
+            background: var(--black);
+            transition: all 0.3s ease-in-out;
+            font-weight: bold;
+            border-radius: 0px;
+            font-size: 18px;
+        }
+        
+        button:hover {
+            border: 2px solid var(--pink);
+            background: var(--pink);
+            color: var(--white);
+        }
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .cart-page {
+        padding: 10px 0 0 0;
+
+        .go-to-checkout {
+            margin: 10px 0 40px 0;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

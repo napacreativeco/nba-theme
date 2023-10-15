@@ -1,0 +1,107 @@
+.navbar-overlay {
+    background: var(--white);
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+
+
+    .overlay-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .overlay-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+    
+            .logo {
+
+                a {
+                    display: block;
+
+                    img {
+                        height: auto;
+                        width: 270px;
+                        max-width: 90%;
+                    }
+                }
+
+            }
+    
+            .close-overlay {
+                border-right: 1px solid var(--black);
+                border-top: 1px solid var(--black);
+                border-bottom: 1px solid var(--black);
+                padding: 20px;
+                aspect-ratio: 1/1;
+                transition: all 0.3s ease-in-out;
+            }
+    
+            .close-overlay:hover {
+                background: var(--pink);
+                border-left: 1px solid var(--pink);
+                border-bottom: 1px solid var(--pink);
+                cursor: pointer;
+    
+                svg {
+                    path {
+                        fill: var(--white);
+                    }    
+                }
+            }
+    
+        }
+    
+        .menu {
+            .title {
+                font-size: 16px;
+                text-transform: uppercase
+            }
+    
+            .links {
+    
+                a {
+                    font-size: 36px;
+                    font-weight: bold;
+                }
+                
+            }
+        }
+    
+        .overlay-footer {
+    
+            ul.links {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+    
+                a {
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+            }
+    
+            ul.social {
+                display: flex;
+                flex-direction: row;
+                gap: 6px;
+    
+                svg {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+    
+        .stripe {
+            height: 15px;
+            width: 100%;
+            padding: 20px 0;
+            background: var(--pink);
+        }
+    }
+
+}

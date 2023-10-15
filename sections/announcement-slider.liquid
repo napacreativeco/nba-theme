@@ -7,7 +7,7 @@
 
         {% when 'blog_slide' %}
           <div class="swiper-slide blog_slide" style="background: url('{{ block.settings.article.image | image_url }}'); background-size: cover; background-position: center center;" data-type="{{ block.type }}">
-            <div class="content">
+            <div class="slide-content">
               <h2>{{ block.settings.article.title }}</h2>
               <p>{{ block.settings.article.excerpt }}</p>
             </div>
@@ -15,7 +15,7 @@
 
         {% when 'plain_slide' %}
           <div class="swiper-slide plain_slide" style="background: url('{{ block.settings.plain_image | image_url }}'); background-size: cover; background-position: center center;" data-type="{{ block.type }}">
-            <div class="content">
+            <div class="slide-content">
               <h2>{{ block.settings.plain_title }}</h2>
               <p>{{ block.settings.plain_body }}</p>
             </div>
@@ -98,6 +98,29 @@
     pagination: {
       el: '.swiper-pagination',
       clickable: true
+    },
+    on: {
+      init: function() {
+        gsap.to('.slide-content', {
+          opacity: 1,
+          y: 0,
+          duration: 0.4
+        }); 
+      },
+      transitionStart: function() {
+        gsap.to('.slide-content', {
+          opacity: 0,
+          y: -20,
+          duration: 0.4
+        }); 
+      },
+      transitionEnd: function() {
+        gsap.to('.slide-content', {
+          opacity: 1,
+          y: 0,
+          duration: 0.4
+        }); 
+      }
     }
   });
 </script>
