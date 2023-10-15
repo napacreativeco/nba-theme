@@ -6,7 +6,83 @@
     "sections": {
       "company-marquee": {
         "type": "company-marquee",
+        "blocks": {
+          "c98f69e1-626d-4a4f-9713-896b375f6b6e": {
+            "type": "company",
+            "settings": {
+              "company_title": "Haltech",
+              "company_link": "#",
+              "company_image": "shopify:\/\/shop_images\/Nappy_Boy_Auto_1_._baaa14a3-8b31-44c0-9fa4-aa6cb5b01d23.png"
+            }
+          },
+          "22b60658-b55f-46e7-8fd0-f31d2166bac5": {
+            "type": "company",
+            "settings": {
+              "company_title": "Wisefab",
+              "company_link": "",
+              "company_image": "shopify:\/\/shop_images\/Nappy_Boy_Auto_2_._d9e2b6f2-ffec-4d2a-8d73-96858140a6e4.png"
+            }
+          },
+          "731fe193-8298-4643-8229-b32e0f8ca724": {
+            "type": "company",
+            "settings": {
+              "company_title": "DriftHQ",
+              "company_link": "",
+              "company_image": "shopify:\/\/shop_images\/image_13.png"
+            }
+          },
+          "f875a1d7-941d-48cb-956b-11333bb74001": {
+            "type": "company",
+            "settings": {
+              "company_title": "RTR",
+              "company_link": "",
+              "company_image": "shopify:\/\/shop_images\/Nappy_Boy_Auto_4_..png"
+            }
+          },
+          "7600cced-8ed2-4e89-9efb-dde51e19df5e": {
+            "type": "company",
+            "settings": {
+              "company_title": "VP Racing",
+              "company_link": "",
+              "company_image": "shopify:\/\/shop_images\/Nappy_Boy_Auto_5_..png"
+            }
+          },
+          "eba29d26-0bfe-49c5-8068-a5c84c22f4fb": {
+            "type": "company",
+            "settings": {
+              "company_title": "CC Competition",
+              "company_link": "",
+              "company_image": "shopify:\/\/shop_images\/Nappy_Boy_Auto_6_..png"
+            }
+          },
+          "4ee0f711-fbbc-41ec-86f1-d8948bd3cc6f": {
+            "type": "company",
+            "settings": {
+              "company_title": "Motul",
+              "company_link": "",
+              "company_image": "shopify:\/\/shop_images\/Nappy_Boy_Auto_7_..png"
+            }
+          },
+          "f4901c4b-894e-455c-a287-c4bfb85bcd0f": {
+            "type": "company",
+            "settings": {
+              "company_title": "",
+              "company_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "c98f69e1-626d-4a4f-9713-896b375f6b6e",
+          "22b60658-b55f-46e7-8fd0-f31d2166bac5",
+          "731fe193-8298-4643-8229-b32e0f8ca724",
+          "f875a1d7-941d-48cb-956b-11333bb74001",
+          "7600cced-8ed2-4e89-9efb-dde51e19df5e",
+          "eba29d26-0bfe-49c5-8068-a5c84c22f4fb",
+          "4ee0f711-fbbc-41ec-86f1-d8948bd3cc6f",
+          "f4901c4b-894e-455c-a287-c4bfb85bcd0f"
+        ],
         "settings": {
+          "company_marquee": ""
         }
       },
       "latest-products": {
@@ -84,6 +160,11 @@
         ],
         "settings": {
           "team_slider": ""
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {
         }
       }
     },
