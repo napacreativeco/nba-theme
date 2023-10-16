@@ -1,14 +1,30 @@
 {{ 'component--company-marquee.css' | asset_url | stylesheet_tag }}
 
-<div class="marquee js-marquee">
-  <div class="marquee__inner" aria-hidden="true" ref="inner">
-    {% for block in section.blocks %}
+<div class="marquee-container">
+  <div class="fade-left"></div>
+  <div class="marquee">
+    <div class="marquee__group">
+      {% for block in section.blocks %}
         <span class="marquee__part">
             <img src="{{ block.settings.company_image | image_url: width: 100 }}" />
         </span>
-    {% endfor %}
+      {% endfor %}
+      
+    </div>
+  <div class="marquee__group" aria-hidden="true">
+      {% for block in section.blocks %}
+        <span class="marquee__part">
+            <img src="{{ block.settings.company_image | image_url: width: 100 }}" />
+        </span>
+      {% endfor %}
+    </div>
   </div>
+  <div class="fade-right"></div>
 </div>
+
+
+
+
 
 
 

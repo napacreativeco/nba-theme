@@ -27,7 +27,6 @@
                         height: 450px;
                         max-width: 100%;
                         object-fit: cover;
-
                     }
                 }
 
@@ -167,6 +166,32 @@
                     
                 }
             }
+        }
+
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .team-member {
+        padding: 34px var(--side-padding) 30px var(--side-padding);
+
+        .top {
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+
+            .left {
+                width: 100%;
+                padding: 0 0 60px 0;
+            }
+            .right {
+                width: 100%;
+            }
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: column;
         }
 
     }

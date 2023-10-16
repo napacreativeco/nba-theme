@@ -60,3 +60,16 @@
     }
 
 }
+
+@media screen and (max-width: 767px) {
+    .team-slider {
+        .swiper-wrapper {
+            .swiper-slide {
+                .content {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

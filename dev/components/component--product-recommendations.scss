@@ -17,8 +17,14 @@
 
 @media screen and (max-width: 767px) {
     .recommended-products {
+
+        .section-title {
+            padding-left: 0;
+        }
+        
         ul.product-list {
             grid-template-columns: repeat(2, 1fr);
+            padding: 0;
         }
     }
 }

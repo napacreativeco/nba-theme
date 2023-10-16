@@ -18,6 +18,10 @@
     .cart-items {
         padding: 0 var(--side-padding);
         
+        .drawer-empty {
+            padding: 0 0 20px 0;
+        }
+
         ul {
             display: flex;
             flex-direction: column;

@@ -31,7 +31,7 @@
         ul {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 40px;
 
             li {
                 display: grid;
@@ -80,6 +80,33 @@
 
                 .read-more:hover {
                     color: var(--pink);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .team-page {
+        .team-list {
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+        }
+
+        .team-updates {
+            padding: 80px var(--side-padding) 60px var(--side-padding);
+
+            ul {
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    align-items: flex-start;
                 }
             }
         }
