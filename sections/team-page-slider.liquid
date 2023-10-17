@@ -6,7 +6,7 @@
       {% case block.type %}
 
         {% when 'blog_slide' %}
-          <div class="swiper-slide blog_slide" style="background: url('{{ block.settings.article.image | image_url }}'); background-size: cover; background-position: center center;" data-type="{{ block.type }}">
+          <div class="swiper-slide blog_slide" style="background: url('{{ block.settings.article.metafields.image.banner_image | image_url }}'); background-size: cover; background-position: center center;" data-type="{{ block.type }}">
             <div class="content">
               <h2>{{ block.settings.article.title }}</h2>
               <p>{{ block.settings.article.excerpt }}</p>
