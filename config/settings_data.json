@@ -102,25 +102,15 @@
       "announcement-slider": {
         "type": "announcement-slider",
         "blocks": {
-          "78d251b6-54e8-4ff0-9cd4-68e73a4ba257": {
+          "c8910fb4-8253-4ff3-bf20-108425b9b538": {
             "type": "blog_slide",
             "settings": {
-              "article": "news\/wiscansin-festival-lineup-announced-for-2024"
-            }
-          },
-          "48e745c5-21a7-4049-9332-a70741dc44f4": {
-            "type": "plain_slide",
-            "settings": {
-              "plain_title": "This is a title",
-              "plain_body": "this is the body",
-              "plain_link": "shopify:\/\/pages\/contact",
-              "plain_image": "shopify:\/\/shop_images\/326795616_nappy_boy_auto.webp"
+              "article": "news\/t-pain-and-hert-release-new-single-baby-got-brap-nappy-boy-ent"
             }
           }
         },
         "block_order": [
-          "78d251b6-54e8-4ff0-9cd4-68e73a4ba257",
-          "48e745c5-21a7-4049-9332-a70741dc44f4"
+          "c8910fb4-8253-4ff3-bf20-108425b9b538"
         ],
         "settings": {
           "featured_product": ""
