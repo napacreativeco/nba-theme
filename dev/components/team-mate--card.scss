@@ -122,3 +122,26 @@
         }
     }
 }
+
+/* MOBILE */
+@media screen and (max-width: 767px) {
+    .team-mate-card {
+        .image {
+            height: 420px;
+        }
+    }
+}
+@media screen and (max-width: 620px) {
+    .team-mate-card {
+        .image {
+            height: 330px;
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .team-mate-card {
+        .image {
+            height: 260px;
+        }
+    }
+}
