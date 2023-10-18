@@ -122,15 +122,6 @@
               "article": "news\/t-pain-and-hert-release-new-single-baby-got-brap-nappy-boy-ent"
             }
           },
-          "d7c9799a-b547-41da-ab1a-5a12e086205a": {
-            "type": "plain_slide",
-            "settings": {
-              "plain_title": "",
-              "plain_body": "",
-              "plain_link": "",
-              "plain_color": ""
-            }
-          },
           "5c883e6b-deca-405a-9f81-28e4656b2dba": {
             "type": "plain_slide",
             "settings": {
@@ -144,7 +135,6 @@
         },
         "block_order": [
           "3e8be0fa-c0fd-497e-9f1e-1c367818d512",
-          "d7c9799a-b547-41da-ab1a-5a12e086205a",
           "5c883e6b-deca-405a-9f81-28e4656b2dba"
         ],
         "settings": {
