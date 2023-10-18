@@ -145,3 +145,10 @@
         }
     }
 }
+@media screen and (max-width: 380px) {
+    .team-mate-card {
+        .image {
+            height: 200px;
+        }
+    }
+}
