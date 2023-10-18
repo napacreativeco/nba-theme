@@ -2,72 +2,7 @@
 
 <div class="homepage">
 
-    <div class="hero">
-      <div class="hero-swiper swiper">
-        <div class="swiper-wrapper">
-          {% for post in blogs.news.articles %}
-            <div class="swiper-slide" style="background: url('{{ post.image | image_url }}'); background-size: cover; background-position: center center;">
-              <div class="color-overlay"></div>
-              <div class="info-box">
-                <span class="subtitle">
-                  {{ 'Featured' | escape }}
-                </span>
-                <h2>{{ post.title }}</h2>
-                <div class="actions">
-                  <a href="{{ post.url }}" class="read-more">
-                    {{ 'read more' | escape }}
-                  </a>
-
-                  <a href="" class="backlink">
-                    post origin
-                  </a>
-                </div>
-              </div>
-              
-            </div>
-          {% endfor %}
-        </div>
-
-        <div class="swiper-navigation">
-          <div class="swiper-button-prev">
-            {% render 'icon--arrow-left' %}
-          </div>
-          <div class="swiper-button-next">
-            {% render 'icon--arrow-right' %}
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="hero-mobile">
-      <div class="hero-swiper-mobile swiper">
-        <div class="swiper-wrapper">
-          {% for post in blogs.news.articles %}
-            <div class="swiper-slide">
-              <div class="image" style="background: url('{{ post.image | image_url }}'); background-size: cover; background-position: center center;"></div>
-              <div class="info-box-mobile">
-                <span class="subtitle">
-                  {{ 'Featured' | escape }}
-                </span>
-                <h2>{{ post.title }}</h2>
-                <div class="actions">
-                  <a href="{{ post.url }}" class="read-more">
-                    {{ 'read more' | escape }}
-                  </a>
-
-                  <a href="" class="backlink">
-                    post origin
-                  </a>
-                </div>
-              </div>
-              
-            </div>
-          {% endfor %}
-        </div>
-
-      </div>
-    </div>
+    {% section 'homepage-slider' %}
 
     {% section 'company-marquee' %}
 
