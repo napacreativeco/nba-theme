@@ -9,9 +9,19 @@
             <img src="{{ block.settings.company_image | image_url: width: 100 }}" />
         </span>
       {% endfor %}
+      {% for block in section.blocks %}
+        <span class="marquee__part">
+            <img src="{{ block.settings.company_image | image_url: width: 100 }}" />
+        </span>
+      {% endfor %}
       
     </div>
   <div class="marquee__group" aria-hidden="true">
+      {% for block in section.blocks %}
+        <span class="marquee__part">
+            <img src="{{ block.settings.company_image | image_url: width: 100 }}" />
+        </span>
+      {% endfor %}
       {% for block in section.blocks %}
         <span class="marquee__part">
             <img src="{{ block.settings.company_image | image_url: width: 100 }}" />
