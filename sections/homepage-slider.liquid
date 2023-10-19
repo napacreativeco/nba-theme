@@ -3,25 +3,55 @@
 <div class="hero">
     <div class="hero-swiper swiper">
         <div class="swiper-wrapper">
-            {% for post in blogs.news.articles %}
-                <div class="swiper-slide" style="background: url('{{ post.image | image_url }}'); background-size: cover; background-position: center center;">
-                    <div class="color-overlay"></div>
-                    <div class="info-box">
-                        <span class="subtitle">
-                        {{ 'Featured' | escape }}
-                        </span>
-                        <h2>{{ post.title }}</h2>
-                        <div class="actions">
-                            <a href="{{ post.url }}" class="read-more">
-                                {{ 'read more' | escape }}
-                            </a>
+            {% for block in section.blocks %}
+                {% case block.type %}
 
-                            <a href="" class="backlink">
-                                post origin
-                            </a>
+                    {% when 'blog_slide' %}
+                    <div class="swiper-slide" style="background: url('{{ block.settings.article.image | image_url }}'); background-size: cover; background-position: center center;">
+                        <div class="color-overlay"></div>
+                        <div class="info-box">
+                            <span class="subtitle">
+                            {{ 'Featured' | escape }}
+                            </span>
+                            <h2>{{ block.settings.article.title }}</h2>
+                            <div class="actions">
+                                <a href="{{ block.settings.article.url }}" class="read-more">
+                                    {{ 'read more' | escape }}
+                                </a>
+
+                                {% if block.settings.article.metafields.article.backlink_url != blank %}
+                                    <a href="{{ block.settings.article.metafields.article.backlink_url }}" class="backlink">
+                                        {{ block.settings.article.metafields.article.backlink_name }}
+                                    </a>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                    {% when 'plain_slide' %}
+                    <div class="swiper-slide" style="background: url('{{ block.settings.plain_image | image_url }}'); background-size: cover; background-position: center center;">
+                        <div class="color-overlay"></div>
+
+                        {% if block.settings.plain_title != blank %}
+                            <div class="info-box">
+                                <span class="subtitle">
+                                {{ 'Featured' | escape }}
+                                </span>
+                                {% if block.settings.plain_title %}
+                                    <h2>{{ post.title }}</h2>
+                                {% endif %}
+                                {% if block.settings.plain_link %}
+                                    <div class="actions">
+                                        <a href="{{ block.settings.plain_link }}" class="read-more">
+                                            {{ 'read more' | escape }}
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                {% endcase %}
             {% endfor %}
         </div>
 
@@ -53,9 +83,11 @@
                   {{ 'read more' | escape }}
                 </a>
 
-                <a href="" class="backlink">
-                  post origin
-                </a>
+                {% if block.settings.plain_link %}
+                    <a href="" class="backlink">
+                    post origin
+                    </a>
+                {% endif %}
               </div>
             </div>
             
