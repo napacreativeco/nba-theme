@@ -8,7 +8,11 @@
         {% when 'blog_slide' %}
           <div class="swiper-slide blog_slide" style="background: url('{{ block.settings.article.metafields.image.banner_image | image_url }}'); background-size: cover; background-position: center center;" data-type="{{ block.type }}">
             <div class="slide-content">
-              <h2>{{ block.settings.article.title }}</h2>
+              <h2>
+                <a href="{{ block.settings.article.url }}">
+                  {{ block.settings.article.title }}
+                </a>
+              </h2>
               <p>{{ block.settings.article.excerpt }}</p>
             </div>
           </div>

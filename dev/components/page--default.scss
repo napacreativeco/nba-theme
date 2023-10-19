@@ -1,0 +1,21 @@
+.default-page {
+    padding: 50px var(--side-padding);
+
+    .page-title {
+        margin: 0 0 30px 0;
+
+        h1 {
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 130%;
+        }
+    }
+
+    .page-content {
+        line-height: 203%;
+
+        p {
+            margin: 0 0 20px 0;
+        }
+    }
+}

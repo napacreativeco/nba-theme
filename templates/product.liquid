@@ -54,9 +54,11 @@
           </div>
         </div>
 
-        <div class="size-chart-link">
-          {% render 'icon--size-chart' %} size chart 
-        </div>
+        {% if product.metafields.product.size_chart != blank %}
+          <div class="size-chart-link">
+            {% render 'icon--size-chart' %} size chart 
+          </div>
+        {% endif %}
 
         <div class="description mobile" itemprop="description">
           <span class="title">

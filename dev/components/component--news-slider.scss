@@ -16,7 +16,7 @@
             .slide-content {
                 display: flex;
                 flex-direction: column;
-                gap: 30px;
+                gap: 12px;
                 max-width: 40%;
                 opacity: 0;
                 transform: translateY(-20%);
@@ -25,6 +25,7 @@
                     font-size: 28px;
                     font-weight: bold;
                     color: var(--white);
+                    line-height: 127%;
                 }
     
                 p {

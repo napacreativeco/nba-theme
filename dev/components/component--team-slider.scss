@@ -16,13 +16,14 @@
             .content {
                 display: flex;
                 flex-direction: column;
-                gap: 30px;
+                gap: 12px;
                 max-width: 40%;
     
                 h2 {
                     font-size: 28px;
                     font-weight: bold;
                     color: var(--white);
+                    line-height: 127%;
                 }
     
                 p {
