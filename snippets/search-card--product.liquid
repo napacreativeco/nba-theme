@@ -1,0 +1,13 @@
+<li class="search-card search-card--product">
+    <div class="type">
+        {{ 'PRODUCT' | escape }}
+    </div>
+
+    <div class="title">
+        <h3>{{ item.title | link_to: item.url }} ({{ item.type }})</h3>
+    </div>
+    
+    <div class="link">
+        <a href="{{ item.url }}">Read</a>
+    </div>
+</li>

@@ -1,0 +1,13 @@
+<li class="search-card search-card--article">
+    <div class="type">
+        {{ 'BLOG' | escape }}
+    </div>
+
+    <div class="title">
+        <h3>{{ item.title | link_to: item.url }}</h3>
+    </div>
+
+    <div class="link">
+        <a href="{{ item.url }}">Read</a>
+    </div>
+</li>
