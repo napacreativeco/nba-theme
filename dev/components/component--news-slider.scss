@@ -65,5 +65,13 @@
 }
 
 @media screen and (max-width: 767px) {
-
+    .news-slider {
+        .swiper-wrapper {
+            .swiper-slide {
+                .slide-content {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
 }
