@@ -1,0 +1,82 @@
+<form action="{{ routes.cart_url }}" method="post">
+
+<div class="cart-header">
+  <span class="title">{{ 'Shopping Cart' | upcase | escape }}</span>
+
+  <div class="item-number">
+    <span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span> items
+  </div>
+</div>
+
+<div class="cart-items" data-ajax-cart-section>
+  {% if cart.item_count == 0 %}
+    <div class="drawer-empty">
+      no items in cart
+    </div>
+  {% else %}
+    <ul class="drawer-has-items"  data-ajax-cart-section-scroll>
+      {% for item in cart.items %}
+        {% assign item_index = forloop.index %}
+        <li class="product-card-cart">
+    <div class="image">
+        <img src="{{ item.product.images[0] | image_url: width: 200 }}" alt="" />
+        <a class="remove" data-ajax-cart-request-button href="{{ item.url_to_remove }}" rel="{{ item.id }}">
+            &times;
+        </a>
+    </div>
+
+    <div class="data">
+        <div class="title">
+            {{ item.product.title }}
+        </div>
+        <div class="type">
+            {{ item.product.type }}
+        </div>
+        <div class="variant">
+            {{ item.variant.title }}
+        </div>
+        <div class="quantity">
+            <span class="label">
+                Quantity: 
+            </span>
+            <span data-ajax-cart-quantity-input="{{ item_index }}">
+                {{ item.quantity }}
+            </span>
+        </div>
+
+    </div>
+
+    <div class="actions">
+        <a data-ajax-cart-request-button
+          href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
+          -
+        </a>
+        <a data-ajax-cart-request-button 
+          href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
+          +
+        </a>
+    </div>
+</li>
+      {% endfor %}
+    </ul>    
+  {% endif %}
+</div>
+
+{% if cart.item_count != 0 %}
+  <div class="additional-notes">
+    <span class="label">Notes to the seller</span>
+    <textarea name="note">{{ cart.note }}</textarea>
+  </div>
+{% endif %}
+
+{% if cart.item_count != 0 %}
+  <div class="go-to-checkout" data-ajax-cart-section>
+      <button type="submit" name="checkout">{{ 'Check out' | escape | upcase }} {{ cart.items_subtotal_price | money_without_trailing_zeros }}</button>
+  </div>
+{% endif %}
+
+{% if additional_checkout_buttons %}
+  {{ content_for_additional_checkout_buttons }}
+{% endif %}
+
+</form>

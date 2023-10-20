@@ -2,47 +2,5 @@
 {{ 'product-card--cart.css' | asset_url | stylesheet_tag }}
 
 <div class="cart-page">
-  <form action="{{ routes.cart_url }}" method="post">
-
-    <div class="cart-header">
-      <span class="title">{{ 'Shopping Cart' | upcase | escape }}</span>
-
-      <div class="item-number">
-        <span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span> items
-      </div>
-    </div>
-
-    <div class="cart-items" data-ajax-cart-section>
-      {% if cart.item_count == 0 %}
-        <div class="drawer-empty">
-          no items in cart
-        </div>
-      {% else %}
-        <ul class="drawer-has-items"  data-ajax-cart-section-scroll>
-          {% for item in cart.items %}
-            {% assign item_index = forloop.index %}
-            {% render 'product-card--cart' item_index: item_index, item: item, cart: cart, forloop: forloop, price: item.final_line_price %}
-          {% endfor %}
-        </ul>    
-      {% endif %}
-    </div>
-
-    {% if cart.item_count != 0 %}
-      <div class="additional-notes">
-        <span class="label">Notes to the seller</span>
-        <textarea name="note">{{ cart.note }}</textarea>
-      </div>
-    {% endif %}
-
-    {% if cart.item_count != 0 %}
-      <div class="go-to-checkout" data-ajax-cart-section>
-          <button type="submit" name="checkout">{{ 'Check out' | escape | upcase }} {{ cart.items_subtotal_price | money_without_trailing_zeros }}</button>
-      </div>
-    {% endif %}
-
-    {% if additional_checkout_buttons %}
-      {{ content_for_additional_checkout_buttons }}
-    {% endif %}
-
-  </form>
+  {% section 'cart-page' %}
 </div>
