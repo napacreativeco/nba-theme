@@ -117,6 +117,7 @@
 
         .dynamic-checkout__content {
             display: block;
+            padding: 0 var(--side-padding) !important;
     
             ul {
                 display: block;
