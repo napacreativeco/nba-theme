@@ -86,6 +86,21 @@
         }
     }
 
+    .dynamic-checkout__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0 38px 20px 38px !important;
+
+        ul {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap !important;
+            flex-direction: row;
+            padding: 0px !important;
+        }
+    }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -99,5 +114,14 @@
                 width: 100%;
             }
         }
+
+        .dynamic-checkout__content {
+            display: block;
+    
+            ul {
+                display: block;
+            }
+        }
+
     }
 }
