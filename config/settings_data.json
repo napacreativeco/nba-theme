@@ -111,6 +111,12 @@
               "article": "news\/t-pain-and-hert-release-new-single-baby-got-brap-nappy-boy-ent"
             }
           },
+          "2f930338-a169-42bc-9ace-66b00e2899d3": {
+            "type": "blog_slide",
+            "settings": {
+              "article": "news\/baby-got-brap-full-recording-session-video"
+            }
+          },
           "5c883e6b-deca-405a-9f81-28e4656b2dba": {
             "type": "plain_slide",
             "settings": {
@@ -124,6 +130,7 @@
         },
         "block_order": [
           "3e8be0fa-c0fd-497e-9f1e-1c367818d512",
+          "2f930338-a169-42bc-9ace-66b00e2899d3",
           "5c883e6b-deca-405a-9f81-28e4656b2dba"
         ],
         "settings": {
