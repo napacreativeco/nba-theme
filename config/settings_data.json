@@ -117,6 +117,12 @@
               "article": "news\/baby-got-brap-full-recording-session-video"
             }
           },
+          "25122ab5-ac3a-4ca7-b7f0-b0cc87146b8c": {
+            "type": "blog_slide",
+            "settings": {
+              "article": "news\/baby-got-brap-recording-session-bts"
+            }
+          },
           "5c883e6b-deca-405a-9f81-28e4656b2dba": {
             "type": "plain_slide",
             "settings": {
@@ -131,6 +137,7 @@
         "block_order": [
           "3e8be0fa-c0fd-497e-9f1e-1c367818d512",
           "2f930338-a169-42bc-9ace-66b00e2899d3",
+          "25122ab5-ac3a-4ca7-b7f0-b0cc87146b8c",
           "5c883e6b-deca-405a-9f81-28e4656b2dba"
         ],
         "settings": {
