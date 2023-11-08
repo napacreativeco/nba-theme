@@ -123,6 +123,12 @@
               "article": "news\/baby-got-brap-recording-session-bts"
             }
           },
+          "d82aefad-a553-44d0-be78-c8d1d65bdbfe": {
+            "type": "blog_slide",
+            "settings": {
+              "article": "news\/laguna-seca-performance-video"
+            }
+          },
           "5c883e6b-deca-405a-9f81-28e4656b2dba": {
             "type": "plain_slide",
             "settings": {
@@ -138,6 +144,7 @@
           "3e8be0fa-c0fd-497e-9f1e-1c367818d512",
           "2f930338-a169-42bc-9ace-66b00e2899d3",
           "25122ab5-ac3a-4ca7-b7f0-b0cc87146b8c",
+          "d82aefad-a553-44d0-be78-c8d1d65bdbfe",
           "5c883e6b-deca-405a-9f81-28e4656b2dba"
         ],
         "settings": {
