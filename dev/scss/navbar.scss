@@ -109,6 +109,10 @@
         .center {
             text-align: center;
             padding: 6px 12px 0 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
 
             img {
                 height: 65px;
@@ -179,6 +183,7 @@
                     cursor: pointer;
                     position: relative;
                     transition: all 0.3s ease-in-out;
+                    padding: 15px 15px 10px 15px;
 
                     .cart-counter {
                         border-radius: 50px;
@@ -193,7 +198,7 @@
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
-                        right: -8px;
+                        right: 7px;
                         box-shadow: 0 2.03065px 5.06568px 0 rgba(0,0,0,.1);
                     }
                 }

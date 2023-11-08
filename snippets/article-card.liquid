@@ -1,0 +1,25 @@
+<li class="article-card">  
+
+    <div class="image">
+        <a href="{{ article.url }}" title="{{ article.title }}">
+            <img src="{{ article.image | image_url: width: 500 }}" alt="">
+        </a>    
+    </div>
+
+    <div class="time">
+        <a href="{{ article.url }}" title="{{ article.title }}">
+            <time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                {{ article.published_at | date: '%b %d, %Y' }}
+            </time>
+        </a>
+    </div>
+
+    <div class="title">
+        <h2>
+            <a href="{{ article.url }}">
+                {{ article.title }}
+            </a>
+        </h2>
+    </div>
+
+</li>

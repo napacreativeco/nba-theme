@@ -7,49 +7,51 @@
                 {% case block.type %}
 
                     {% when 'blog_slide' %}
-                    <div class="swiper-slide" style="background: url('{{ block.settings.article.image | image_url }}'); background-size: cover; background-position: center center;">
-                        <div class="color-overlay"></div>
-                        <div class="info-box">
-                            <span class="subtitle">
-                            {{ 'Featured' | escape }}
-                            </span>
-                            <h2>{{ block.settings.article.title }}</h2>
-                            <div class="actions">
-                                <a href="{{ block.settings.article.url }}" class="read-more">
-                                    {{ 'read more' | escape }}
-                                </a>
+                      <div class="swiper-slide" style="background: url('{{ block.settings.article.image | image_url }}'); background-size: cover; background-position: center center;">
+                          <div class="color-overlay"></div>
+                          <div class="info-box">
+                              <span class="subtitle">
+                              {{ 'Featured' | escape }}
+                              </span>
+                              <h2>{{ block.settings.article.title }}</h2>
+                              <div class="actions">
 
-                                {% if block.settings.article.metafields.article.backlink_url != blank %}
-                                    <a href="{{ block.settings.article.metafields.article.backlink_url }}" class="backlink">
-                                        {{ block.settings.article.metafields.article.backlink_name }}
+                                  {% if block.settings.article.metafields.article.post_or_link == false %}
+                                    <a href="{{ block.settings.article.metafields.article.backlink_url }}" class="read-more">
+                                      {{ 'read more' | escape }}
+                                    </a>                         
+                                  {% else %}
+                                    <a href="{{ block.settings.article.url }}" class="read-more">
+                                        {{ 'read more' | escape }}
                                     </a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
+                                  {% endif %}
+
+                              </div>
+                          </div>
+                      </div>
 
                     {% when 'plain_slide' %}
-                    <div class="swiper-slide" style="background: url('{{ block.settings.plain_image | image_url }}'); background-size: cover; background-position: center center;">
-                        <div class="color-overlay"></div>
+                      <div class="swiper-slide" style="background: url('{{ block.settings.plain_image | image_url }}'); background-size: cover; background-position: center center;">
+                          <div class="color-overlay"></div>
 
-                        {% if block.settings.plain_title != blank %}
-                            <div class="info-box">
-                                <span class="subtitle">
-                                {{ 'Featured' | escape }}
-                                </span>
-                                {% if block.settings.plain_title %}
-                                    <h2>{{ post.title }}</h2>
-                                {% endif %}
-                                {% if block.settings.plain_link %}
-                                    <div class="actions">
-                                        <a href="{{ block.settings.plain_link }}" class="read-more">
-                                            {{ 'read more' | escape }}
-                                        </a>
-                                    </div>
-                                {% endif %}
-                            </div>
-                        {% endif %}
-                    </div>
+                          {% if block.settings.plain_title != blank %}
+                              <div class="info-box">
+                                  <span class="subtitle">
+                                  {{ 'Featured' | escape }}
+                                  </span>
+                                  {% if block.settings.plain_title %}
+                                      <h2>{{ post.title }}</h2>
+                                  {% endif %}
+                                  {% if block.settings.plain_link %}
+                                      <div class="actions">
+                                          <a href="{{ block.settings.plain_link }}" class="read-more">
+                                              {{ 'read more' | escape }}
+                                          </a>
+                                      </div>
+                                  {% endif %}
+                              </div>
+                          {% endif %}
+                      </div>
 
                 {% endcase %}
             {% endfor %}

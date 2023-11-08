@@ -66,7 +66,7 @@
             <ul class="social-links">
                 {% if collection.metafields.custom.social_media.value.instagram != blank %}
                     <li class="social-link instagram">
-                        <a href="{{ collection.metafields.custom.social_media.value.instagram }}" title="Instagram">
+                        <a href="{{ collection.metafields.custom.social_media.value.instagram }}" title="Instagram" target="_blank">
                             <span class="icon">
                                 {% render 'icon--instagram' %}
                             </span>
@@ -78,9 +78,9 @@
                 {% endif %}
                 {% if collection.metafields.custom.social_media.value.twitter != blank %}
                     <li class="social-link twitter">
-                        <a href="{{ collection.metafields.custom.social_media.value.twitter }}" title="X">
+                        <a href="{{ collection.metafields.custom.social_media.value.twitter }}" title="X" target="_blank">
                             <span class="icon">
-                                {% render 'icon--twitter' %}
+                                {% render 'icon--x' %}
                             </span>
                             <span class="label">
                                 {{ 'X' | escape }}
@@ -88,9 +88,21 @@
                         </a>
                     </li>
                 {% endif %}
+                {% if collection.metafields.custom.social_media.value.threads != blank %}
+                    <li class="social-link threads">
+                        <a href="{{ collection.metafields.custom.social_media.value.threads }}" title="Threads" target="_blank">
+                            <span class="icon">
+                                {% render 'icon--threads' %}
+                            </span>
+                            <span class="label">
+                                {{ 'Threads' | escape }}
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
                 {% if collection.metafields.custom.social_media.value.twitch != blank %}
                     <li class="social-link twitch">
-                        <a href="{{ collection.metafields.custom.social_media.value.twitch }}" title="Twitch">
+                        <a href="{{ collection.metafields.custom.social_media.value.twitch }}" title="Twitch" target="_blank">
                             <span class="icon">
                                 {% render 'icon--twitch' %}
                             </span>
@@ -102,7 +114,7 @@
                 {% endif %}
                 {% if collection.metafields.custom.social_media.value.facebook != blank %}
                     <li class="social-link facebook">
-                        <a href="{{ collection.metafields.custom.social_media.value.facebook }}" title="Facebook">
+                        <a href="{{ collection.metafields.custom.social_media.value.facebook }}" title="Facebook" target="_blank">
                             <span class="icon">
                                 {% render 'icon--facebook' %}
                             </span>
@@ -114,12 +126,24 @@
                 {% endif %}
                 {% if collection.metafields.custom.social_media.value.youtube != blank %}
                     <li class="social-link youtube">
-                        <a href="{{ collection.metafields.custom.social_media.value.youtube }}" title="YouTube">
+                        <a href="{{ collection.metafields.custom.social_media.value.youtube }}" title="YouTube" target="_blank">
                             <span class="icon">
                                 {% render 'icon--youtube' %}
                             </span>
                             <span class="label">
                                 {{ 'YouTube' | escape }}
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if collection.metafields.custom.social_media.value.tik_tok != blank %}
+                    <li class="social-link tiktok">
+                        <a href="{{ collection.metafields.custom.social_media.value.tik_tok }}" title="TikTok" target="_blank">
+                            <span class="icon">
+                                {% render 'icon--tiktok' %}
+                            </span>
+                            <span class="label">
+                                {{ 'TikTok' | escape }}
                             </span>
                         </a>
                     </li>

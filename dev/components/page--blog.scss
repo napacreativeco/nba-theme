@@ -1,0 +1,28 @@
+.blog-page {
+    padding: 40px 0 100px 0;
+
+    h1 {
+        font-weight: bold;
+        font-size: 44px;
+        text-transform: uppercase;
+        padding: 20px var(--side-padding);
+    }
+
+    .blog-posts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        padding: 0px var(--side-padding);
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .blog-page {
+
+        .blog-posts {
+            grid-template-columns: 1fr;
+        }
+
+    }
+}

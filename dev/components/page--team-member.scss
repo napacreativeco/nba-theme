@@ -144,6 +144,8 @@
 
                     svg {
                         transition: all 0.3s ease-in-out;
+                        max-width: 24px;
+
                         path {
                             transition: all 0.3s ease-in-out;
                         }
