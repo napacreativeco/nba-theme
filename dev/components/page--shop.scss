@@ -1,6 +1,11 @@
 .collection-page {
    //padding-top: 71px;
 
+   .lower {
+      max-width: var(--squeeze);
+      margin: 0 auto;
+   }
+   
    ul.product-list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);

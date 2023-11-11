@@ -12,6 +12,8 @@
         grid-template-columns: 1fr 1fr 1fr;
         align-items: stretch;
         padding: 0 var(--side-padding);
+        max-width: 1600px;
+        margin: 0 auto;
 
         // Globals
         li {

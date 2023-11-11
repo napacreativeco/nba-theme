@@ -7,7 +7,9 @@ footer {
         align-items: center;
         grid-gap: 20px;
         padding: 20px 0;
-
+        max-width: 1600px;
+        margin: 0 auto;
+        
         .left {
             display: flex;
             align-items: center;

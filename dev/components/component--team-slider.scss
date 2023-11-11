@@ -11,27 +11,37 @@
             padding: 0px var(--side-padding);
             display: flex;
             align-items: center;
-            height: 280px;
+            height: 380px;
 
-            .content {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                max-width: 40%;
-    
-                h2 {
-                    font-size: 28px;
-                    font-weight: bold;
-                    color: var(--white);
-                    line-height: 127%;
-                }
-    
-                p {
-                    color: var(--white);
-                    font-weight: normal; 
-                    font-size: 16px;
+            .squeeze {
+                width: 100%;
+                padding: 0 var(--side-padding);
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    
+        
+                    h2 {
+                        font-size: 28px;
+                        font-weight: bold;
+                        color: var(--white);
+                        line-height: 127%;
+                        max-width: 60%;
+                        margin: 0 0 0 0;
+                    }
+        
+                    p {
+                        color: var(--white);
+                        font-weight: normal; 
+                        font-size: 16px;
+                        max-width: 60%;
+                        margin: 0 0 0 0;
+                    }
                 }
             }
+
 
         }
 
@@ -60,6 +70,30 @@
         }
     }
 
+}
+
+@media screen and (min-width: 1300px) {
+    .team-slider {
+        .swiper-wrapper {
+            .swiper-slide {
+
+                .squeeze {
+
+                    .content {
+                                
+                        h2 {
+                            font-size: 43px;
+                            font-weight: bold;
+                            color: var(--white);
+                            line-height: 127%;
+                            margin: 0 0 0 0;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 767px) {

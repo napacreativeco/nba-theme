@@ -1,5 +1,7 @@
 .single-product {
-
+    max-width: var(--squeeze);
+    margin: 0 auto;
+    
     form {
         display: grid;
         grid-template-columns: 54% 1fr;

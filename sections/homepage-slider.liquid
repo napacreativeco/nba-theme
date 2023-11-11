@@ -9,7 +9,8 @@
                     {% when 'blog_slide' %}
                       <div class="swiper-slide" style="background: url('{{ block.settings.article.image | image_url }}'); background-size: cover; background-position: center center;">
                           <div class="color-overlay"></div>
-                          <div class="info-box">
+                          <div class="content-container">
+                            <div class="info-box">
                               <span class="subtitle">
                               {{ 'Featured' | escape }}
                               </span>
@@ -27,6 +28,7 @@
                                   {% endif %}
 
                               </div>
+                            </div>
                           </div>
                       </div>
 

@@ -6,11 +6,13 @@
         {% section 'team-page-slider' %}
     </div>
 
-    <h1 class="section-title">
-    {{ 'Nappy Boy Team' | escape }}
-    </h1>
+    <div class="squeeze">
+        <h1 class="section-title">
+            {{ 'Nappy Boy Team' | escape }}
+        </h1>
+    </div>
 
-    <div class="team-list">
+    <div class="team-list squeeze">
         <ul>
             {% for collection in collections %}
                 {% if collection.metafields.collection.team_mate == true %}
@@ -21,7 +23,7 @@
     </div>
 
 
-    <div class="team-updates">
+    <div class="team-updates squeeze">
 
         <h2 class="section-title">
             {{ 'Recent Updates' | escape }}

@@ -11,27 +11,34 @@
             padding: 0px var(--side-padding);
             display: flex;
             align-items: center;
-            height: 280px;
+            height: 340px;
 
-            .slide-content {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                max-width: 40%;
-                opacity: 0;
-                transform: translateY(-20%);
-    
-                h2 {
-                    font-size: 28px;
-                    font-weight: bold;
-                    color: var(--white);
-                    line-height: 127%;
-                }
-    
-                p {
-                    color: var(--white);
-                    font-weight: normal; 
-                    font-size: 16px;
+            .squeeze {
+                width: 100%;
+                padding: 0 var(--side-padding);
+                
+                .slide-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    max-width: 40%;
+                    opacity: 0;
+                    transform: translateY(-20%);
+
+                    h2 {
+                        font-size: 28px;
+                        font-weight: bold;
+                        color: var(--white);
+                        line-height: 127%;
+                    }
+        
+                    p {
+                        color: var(--white);
+                        font-weight: normal; 
+                        font-size: 16px;
+                    }
+                    
+        
                 }
             }
 
