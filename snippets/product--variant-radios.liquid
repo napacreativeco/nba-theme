@@ -47,7 +47,7 @@
           <li class="switch-field">
               {% if variant.available %}
                   <label for="{{ variant.id }}">
-                    <input {% if forloop.first %} class="active" {% endif %} type="radio"{% if variant.compare_at_price > variant.price %} data-compare-at-price="{{ variant.compare_at_price | money_with_currency }}"{% endif %} data-price="{{ variant.price | money_with_currency }}" id="{{ variant.id }}" value="{{ variant.id }}" name="id" {% if product.selected_or_first_available_variant %} checked="checked"{% endif %} />
+                    <input {% if product.selected %} class="active" {% endif %} type="radio"{% if variant.compare_at_price > variant.price %} data-compare-at-price="{{ variant.compare_at_price | money_with_currency }}"{% endif %} data-price="{{ variant.price | money_with_currency }}" id="{{ variant.id }}" value="{{ variant.id }}" name="id" {% if product.selected_or_first_available_variant %} checked="checked"{% endif %} />
                     <span class="variant-name">{{ variant.option1 }}</span>
                   </label>
               {% else %}
