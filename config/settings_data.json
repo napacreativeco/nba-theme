@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "navbar_logo": "shopify:\/\/shop_images\/nappy-boy-logo--flame.png",
@@ -43,6 +52,9 @@
       },
       "latest-products": {
         "type": "latest-products",
+        "custom_css": [
+          "* {display: none;}"
+        ],
         "settings": {
           "section_title": "",
           "use_default_collection": false,
