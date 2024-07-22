@@ -111,6 +111,9 @@
       },
       "cart-drawer": {
         "type": "cart-drawer",
+        "custom_css": [
+
+        ],
         "settings": {
         }
       },
@@ -173,5 +176,10 @@
       "customer_layout": "theme",
       "example_option": "option"
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".shop-actions {display: none !important;}"
+    ]
   }
 }
