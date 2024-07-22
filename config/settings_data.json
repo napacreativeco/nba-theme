@@ -179,7 +179,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".shop-actions {display: none !important;}"
+      ".shop-actions, .search-link {display: none !important;}"
     ]
   }
 }
